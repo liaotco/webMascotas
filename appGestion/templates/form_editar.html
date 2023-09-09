@@ -1,0 +1,36 @@
+
+{% extends 'baseGestion.html' %}
+{% load static %}
+<title>{% block title %}Editar Producto{% endblock %}</title>
+{% block content %}
+            <div class="cont_formulario">
+                <form method="POST">{% csrf_token %}   
+                    <span class="cont_formulario-title">
+                        Modifica los datos del producto
+                    </span>
+        
+                    <div class="input100 validate-input">
+                        <input class="input100" type="number" id="id" name="id" placeholder="{{producto.id}}" disabled>
+                        <span class="focus-input100"></span>
+                    </div>
+        
+                    <div class="input100 validate-input">
+                        <input class="input100" type="text" name="imagen" id="imagen" placeholder="{{producto.imagen}}">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="input100 validate-input">
+                        <input class="input100" type="text" name="nombre" id="nombre" placeholder="{{producto.nombre}}">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="input100 validate-input">
+                        <input class="input100" type="number" name="precio" id="precio" min="0" step="0.1" placeholder="{{producto.precio}}" ></textarea>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="contenido-form-btn">
+                        <button type="submit" class="cont_formulario-btn">
+                            <i class="fa-solid fa-floppy-disk fa-2xl"></i>                            
+                        </button>
+                    </div>          
+                </form>
+             </div>
+{% endblock %}

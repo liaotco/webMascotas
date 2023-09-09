@@ -1,0 +1,59 @@
+{% extends 'baseTienda.html' %}
+{% load static %}
+
+    <title>{% block title %}Mi carrito{% endblock %}</title>
+
+{% block content %}
+
+		<div class="contenedor-carrito">		
+			<div class="carrito-botones">
+			   	<a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito">
+				<i class="fa-solid fa-trash-can fa-2xl"></i>
+		        </a>   	
+			</div>
+			{% if request.session.carrito.items %}
+			{% for key,value in request.session.carrito.items %}
+					<div class="productos-carrito">
+	
+						<div class="info-productos-carrito">						
+                            <span class="cantidad-producto-carrito">{{value.cantidad}}</span>
+                            <p class="titulo-producto-carrito">{{value.nombre}}</p>
+                            <span class="precio-producto-carrito">{{value.precio}} €</span>
+							<span class="subtotal-producto-carrito">{{value.subtotal}} €</span>
+                        </div>
+
+                        <a class="carrito-botones" href="{% url 'agregar' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
+                        <a class="carrito-botones" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></i></a>                     
+                          			
+					</div>
+					{% endfor %}
+					{% else %}
+					<h2>No hay Productos Seleccionados</h2>
+					{% endif %}
+                    <div class="carrito-total">
+                        <h3>Total:</h3>
+                        <span class="total-pagar"><h3>{{total_carrito}} €</h3></span>
+						
+					</div>
+					<div class="carrito-pagar">
+						<div id="paypal-button-container"></div>  
+						<script>
+				
+							paypal.Buttons({					
+						
+							createOrder: function(data, actions) {
+								return actions.order.create({
+                            	purchase_units: [{
+                                amount: {
+                                	value: '{{total_carrito}}'
+                                		}
+                            			}]
+                        			});
+                    			},
+							}).render('#paypal-button-container');
+						</script>
+					</div>
+				
+		</div>
+      
+		{% endblock %}

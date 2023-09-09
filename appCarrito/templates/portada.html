@@ -1,0 +1,66 @@
+{% extends 'baseTienda.html' %}
+{% load static %}
+
+    <title>{% block title %}Portada{% endblock %}</title>
+{% block content %}
+<!-- Slideshow container -->
+
+<div id="carrusel-contenido">
+  <div id="carrusel-caja">
+      <div class="carrusel-elemento">
+          <img class="imagenes" src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+      </div>
+      <div class="carrusel-elemento">   
+          <img class="imagenes" src="https://images.pexels.com/photos/160846/french-bulldog-summer-smile-joy-160846.jpeg?auto=compress&cs=tinysrgb&w=1600">
+      </div>
+      <div class="carrusel-elemento">   
+          <img class="imagenes" src="https://images.pexels.com/photos/1643456/pexels-photo-1643456.jpeg?auto=compress&cs=tinysrgb&w=1600">                        
+      </div>
+  </div>
+</div>
+
+ 
+        <h2 class="main-title">Recien llegados para ti</h2>
+        <section class="container-products">
+          <div class="product">
+            <img src="https://es.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw3b875b12/productimages/singlepackshot/312262C02_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Farenheit (Grey)</h3>
+              <span class="product__price">75.00 €</span>
+             </div>
+            <a href="{% url 'tienda' %}">Ir a la tienda</a></li>
+          </div>
+          <div class="product">
+            <img src="https://s.alicdn.com/@sc04/kf/Hc57cc8d5548a4e989d98518c36b5ccafu.jpg_280x280.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Opium (Grey)</h3>
+              <span class="product__price">5.00 €</span>
+            </div>
+            <a href="{% url 'tienda' %}">Ir a la tienda</a></li>
+          </div>
+          <div class="product">
+            <img src="https://s.alicdn.com/@sc04/kf/H0a7f37863a5f4c17acb4611b32c48d60j.jpg_300x300.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Kenneth Cole</h3>
+              <span class="product__price">55.00 €</span>
+            </div>
+            <a href="{% url 'tienda' %}">Ir a la tienda</a></li>
+          </div>
+          <div class="product">
+            <img src="https://s.alicdn.com/@sc04/kf/Hb499265e72a34537a0076a6c9b56d91f3.jpg_300x300.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Farenheit Oval</h3>
+              <span class="product__price">125.00 €</span>
+            </div>
+            <a href="{% url 'tienda' %}">Ir a la tienda</a></li>
+          </div>
+        </section>
+      
+      <section class="container__testimonials">
+        <h2 class="section__title">Opiniones</h2>
+        <h3 class="testimonial__title">Anamaria </h3>
+        <p class="testimonial__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, perferendis, animi! Numquam quasi similique, fuga sint. Nulla veritatis quia nemo, magni, necessitatibus impedit inventore, provident culpa repellat esse a quo.</p>
+      </section>    
+
+
+  {% endblock %}

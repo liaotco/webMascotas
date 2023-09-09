@@ -1,0 +1,29 @@
+{% extends 'baseTienda.html' %}
+{% load static %}
+
+    <title>{% block title %}Bienvenido a nuestra Tienda Online{% endblock %}</title>
+{% block content %}
+    <span class="container">
+            <span class="centering">
+                <section class="articles">
+                    {% for p in productos %}
+                    <article>
+                        <figure class="card">
+                            <img src="{% static 'images/' %}{{p.imagen}}" class="w3-round" style="width:90%" alt=""> 
+                          
+                        </figure>
+                        <div class="article-preview">
+                            <h2 class="card-title">{{p.nombre}}</h2>
+                            <p>
+                                <p class="product__price">{{p.precio}} €</p>
+                                <a class="agregar" href="agregar/{{p.id}}"><i class="fa-solid fa-cart-plus fa-2xl"></i></a>
+                            </p>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </section>
+           
+            </span>           
+        </span>
+    
+{% endblock %}
