@@ -53,4 +53,19 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-/*CARRITO*/
+/*LOGIN*/
+let loginForm = document.querySelector(".my-form");
+
+loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+
+    console.log('Email:', email.value);
+    console.log('Password:', password.value);
+    // process and send to API 
+});
+function ventanaLogin (URL){
+  window.open(URL,"Login","width=520px,height=400px,scrollbars=YES")
+}
+
