@@ -42,7 +42,8 @@
           </div>
           <div class="main-header__container">
             <a href="" class="main-header__link"><i class="fas fa-user"></i></a>
-            <a href="{% url 'verCarrito' %}" class="main-header__btn">My cart <i class="fas fa-shopping-cart"></i></a>
+            <a href="{% url 'verCarrito' %}" class="main-header__btn">My cart<i class="fas fa-shopping-cart"></i> <p class="cantidadCarrito">{{cantidadProd}}</p></a>
+           
           </div>
         </div>
   </header>

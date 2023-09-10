@@ -1,13 +1,10 @@
 def total_carrito(request):
     total = 0
+    cantidad=0
     if 'carrito' in request.session.keys():
         for key, value in request.session['carrito'].items():
             total += value['subtotal']
-    return {'total_carrito': total}
+            cantidad += value['cantidad']
+    return {'total_carrito': total, 'cantidadProd':cantidad}
 
 
-def cuantos_productos(request):
-    cantidad=0
-    for key,value in request.session['carrito'].items():
-        cantidad +=1
-    return{'productos_carrito':cantidad}

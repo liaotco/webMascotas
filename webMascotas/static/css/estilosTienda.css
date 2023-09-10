@@ -254,6 +254,13 @@ p{
   background-color: #FF4E00;
   color: white;
 }
+
+.cantidadCarrito{
+  background-color: #333;
+  color: white;
+  text-align: center;
+  font-size: larger;
+}
 /* ESTILOS DE SLIDER */
 
 h1 {
@@ -545,6 +552,15 @@ h1 {
 .agregar{ color:#333}
 .agregar:hover{background-color: #333; color: white;}
 .agregar:visited,.agregar:active{color:#333}
+
+
+@media (max-width:320px){
+  .container{
+    width: 300px;
+    margin: auto;
+  }
+}
+
 /*Estilos para tablet*/
 @media screen and (min-width:768px) {
   .container{
