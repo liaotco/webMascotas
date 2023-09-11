@@ -923,13 +923,15 @@ background-color: #fff;
   color:white;
   text-decoration: none;
 }
-
-.completar-compra, .completar-compra a {
+.completar-compra a{
+  text-decoration: none;
+}
+.completar-compra  {
  
   font-size: x-large;
   background-color: #FF4E00;
   color: white;
-  text-decoration: none;
+
   padding: 10px;
 }
 

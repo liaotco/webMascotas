@@ -75,7 +75,18 @@ font-size: 20px;
     gap: 50px;
     
 }
-
+.completar-compra a{
+    text-decoration: none;
+  }
+  .completar-compra  {
+   
+    font-size: x-large;
+    background-color: #FF4E00;
+    color: white;
+  
+    padding: 10px;
+  }
+  
 .carrito-total,.carrito-pagar{
     display: flex;
     justify-content: center;
