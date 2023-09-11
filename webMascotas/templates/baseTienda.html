@@ -73,16 +73,16 @@
         </main>
         <div class="pop-up">
           <div class="pop-up-wrap">
-            <div class="pop-up-title">
-              <h1 class="completar-compra"><a href="{% url 'verCarrito' %}" >Confirmar compra</a></h1>
-            </div>
+          
            
             <div class="subcription">                                  
               <div class="sub-content">
                   <i class="far fa-times-circle" id="close"></i>
                     <div class="carrito-botones">
                         <a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito"><i class="fa-solid fa-trash-can fa-2xl"></i></a>   
-                  
+                       
+                       
+                          
                         </div>	
                     </div>
                     {% if request.session.carrito.items %}
@@ -104,7 +104,8 @@
                     <div class="carrito-total">
                       <h3>Total:</h3>
                       <span class="total-pagar"><h3>{{total_carrito}} €</h3></span>                 
-                </div>
+                    </div>
+                    <h1><a href="{% url 'verCarrito' %}">  <p class="completar-compra">Finalizar compra</p></a></h1>
               </div>
             </div>
           </div>

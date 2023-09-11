@@ -924,11 +924,12 @@ background-color: #fff;
   text-decoration: none;
 }
 
-.completar-compra a{
-  color: #FF4E00;
+.completar-compra, .completar-compra a {
+ 
+  font-size: x-large;
+  background-color: #FF4E00;
+  color: white;
   text-decoration: none;
-  background-color: white;
-  box-shadow: #333;
   padding: 10px;
 }
 

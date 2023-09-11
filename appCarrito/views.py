@@ -25,18 +25,18 @@ def agregar_producto(request,prod_id):
     carrito=Carrito(request)
     producto=Producto.objects.get(id=prod_id)
     carrito.agregar(producto)
-    return redirect('tienda')
+    return redirect('verCarrito')
 
 def sacar_producto(request,prod_id):
     carrito=Carrito(request)
     producto=Producto.objects.get(id=prod_id)
     carrito.sacar(producto)
-    return redirect('tienda')
+    return redirect('verCarrito')
 
 def limpiar_carrito(request):
     carrito=Carrito(request)
     carrito.limpiar()
-    return redirect('tienda')
+    return redirect('verCarrito')
 
 
 
