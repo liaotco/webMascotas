@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os 
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x)!8xd!g5$nf1k6kx(1d43-_%rw%f*l#c7k1u)&rp^h5-h%)%%'
+SECRET_KEY = 'django-insecure-xdl3xg8bnnx30)-uq-j#iqjq^9$j(+1fq9dd$eq75r49sr4mt@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['liaotc.pythonanywhere.com']
 
 
 # Application definition
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'appCarrito',
     'appGestion',
     'webMascotas'
-    
 ]
 
 MIDDLEWARE = [
@@ -67,7 +66,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                   'appCarrito.procesador_contexto.total_carrito'
+                'appCarrito.procesador_contexto.total_carrito'
+
             ],
         },
     },
@@ -82,13 +82,14 @@ WSGI_APPLICATION = 'webMascotas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'webtienda',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'liaotc$default',
+        'USER': 'liaotc',
+        'PASSWORD': 'R0sal1a23',
+        'HOST': 'liaotc.mysql.pythonanywhere-services.com',
         'PORT': '3306'
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -126,6 +127,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=(os.path.join(BASE_DIR,'webMascotas/static'),)
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
