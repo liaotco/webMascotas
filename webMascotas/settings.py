@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xdl3xg8bnnx30)-uq-j#iqjq^9$j(+1fq9dd$eq75r49sr4mt@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['liaotc.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -67,7 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'appCarrito.procesador_contexto.total_carrito'
-
+                
             ],
         },
     },
@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'webMascotas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'liaotc$default',
-        'USER': 'liaotc',
-        'PASSWORD': 'R0sal1a23',
-        'HOST': 'liaotc.mysql.pythonanywhere-services.com',
+        'NAME': 'webtienda',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
         'PORT': '3306'
     }
 }

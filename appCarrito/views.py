@@ -3,6 +3,8 @@ from appGestion.models import Producto
 from appCarrito.carrito import Carrito
 
 # Create your views here.
+def pruebas(request):
+    return render(request,'pruebas.html')
 
 def inicio(request):
     productos=Producto.objects.all() #sacamos todos los productos de la tabla

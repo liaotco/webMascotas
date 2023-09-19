@@ -1,22 +1,26 @@
-/*RESPONSIVE*/
 
-function alternar(menu)
-{
-   var oMenu = document.getElementById(menu);
-   //Si el menu tiene clase abierto
-   //cambia clase a cerrado y cambia el botón
-if (oMenu.classList.contains('abierto')){
-   oMenu.classList.remove('abierto');
-   oMenu.classList.add('cerrado');
-   
-   }
-//Si no está abierto, cambia clase a abierto y cambia el botón
-else{
-   oMenu.classList.remove('cerrado');
-   oMenu.classList.add('abierto');
+let btnMenu = document.getElementById('btn-menu');
+let mainNav = document.getElementById('main-nav');
+btnMenu.addEventListener('click', function(){
+  mainNav.classList.toggle('mostrar');
+});
 
-   }
+
+$(document).ready(function () {
+  // POP up 
+function showPopup(){
+    $('.pop-up').addClass('show');
+    $('.pop-up-wrap').addClass('show');
 }
+
+$("#close").click(function(){
+    $('.pop-up').removeClass('show');
+    $('.pop-up-wrap').removeClass('show');
+});
+
+$(".btn-abrir").click(showPopup);
+
+});
 
 /*VENTANA EMERGENTE PARA DETALLE*/
 function ventanaSecundaria (URL){
@@ -24,7 +28,7 @@ function ventanaSecundaria (URL){
 }
 
 /*CARRUSEL FOTOS*/
-let slideIndex = 1;
+/*let slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
@@ -52,7 +56,7 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
-
+*/
 /*LOGIN*/
 let loginForm = document.querySelector(".my-form");
 

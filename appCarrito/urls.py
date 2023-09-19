@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from .views import inicio,agregar_producto,sacar_producto,limpiar_carrito,nosotros,contacto,verCarrito,tienda,agregarcarrito,sacarcarrito
-
+from .views import pruebas
 """"
 path('',pruebas,name='pruebas'),
 """
@@ -16,4 +16,5 @@ urlpatterns = [
     path('nosotros/', nosotros, name='nosotros'),
     path('contacto/', contacto, name='contacto'),
     path('verCarrito/',verCarrito, name='verCarrito'),
+    path('pruebas/',pruebas, name='pruebas'),
 ]
