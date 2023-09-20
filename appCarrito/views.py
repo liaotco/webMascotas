@@ -4,9 +4,6 @@ from appCarrito.carrito import Carrito
 
 
 # Create your views here.
-def pruebas(request):
-    return render(request,'pruebas.html')
-
 def inicio(request):
     productos=Producto.objects.all() #sacamos todos los productos de la tabla
     return render(request,'portada.html')
@@ -53,7 +50,10 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect('verCarrito')
 
-def insertarSubscripcion(request):
+def insertarSubscripcion(request):  
+    subscripciones=Subscripcion.objects.all()
+    print(subscripciones)
+    print(request.method)
     if request.method == 'POST':
         var_email=request.POST['email']
         subscripcion=Subscripcion.objects.create(email=var_email)

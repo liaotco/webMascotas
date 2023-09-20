@@ -33,7 +33,7 @@
         </nav>
       </div>
       <div class="main-header__container">
-        <form action="{% url 'insertarSubscripcion' %}" method="POST"class="news">{% csrf_token %}   
+        <form action="{% url 'insertarSubscripcion' %}" method="POST"  class="news">{% csrf_token %}   
           <button>Newsletter</button>
           <input type="email" name="email" class="main-header__input" placeholder="Email">
         </form>

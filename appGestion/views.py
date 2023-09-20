@@ -20,6 +20,7 @@ def mostrarProductos(request):
 
 
 def insertarProducto(request):
+   
     if request.method == 'POST':
         var_id=request.POST['id']
         var_imagen=request.POST['imagen']
@@ -29,6 +30,7 @@ def insertarProducto(request):
                                      imagen=var_imagen,
                                      nombre=var_nombre,
                                      precio=var_precio)
+        
         return redirect('verProducto')
     return mostrarProductos(request)
 
