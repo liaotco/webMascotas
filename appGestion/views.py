@@ -54,9 +54,4 @@ class ProductoDetailView(DetailView):
         def get_object(self):
             objeto=self.model.objects.get(id=self.kwargs['pk'])
             return objeto
-"""
-class PostDetailView(DetailView):
-    model = Post
-    template_name = 'post_detail.html'
-    context_object_name = 'post'
-"""
+        

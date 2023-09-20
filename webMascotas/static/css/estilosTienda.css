@@ -7,7 +7,7 @@
   margin:0;
   padding: 0;
   box-sizing: border-box;
-
+  font-family: "Inconsolata";
 }
 /*#ff9b00, #48433c, #ebe9e7, #c2bdb6, #379bb5*/
 
@@ -31,17 +31,33 @@ img {
 .main-header__container{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-.news{
-  font-size: x-large;
-  background-color: #FF4E00;
-  color: white;
-  padding: 5px;
-  margin: 0 auto;  
-  border-radius: 5px;
+  align-items:center;
 }
 
+.news button{
+  background-color: #FF4E00;
+  color: white;
+  padding:0 5px;
+  border-radius: 5px;
+  border:none;
+  padding: 5px;
+  margin: 0 auto;  
+}
+.news{ 
+    text-align: center;
+    font-size:large;
+    display: flex;
+    gap:5px;
+  } 
+  
+
+.main-header__input{
+  display:inline;
+  min-width: 200px;
+  margin: 0 auto;
+  font-size:medium;
+  margin-right: 10px;
+  }
 
 .main-header__link {
   color: #333;
@@ -55,11 +71,9 @@ img {
 .main-header__txt{
   font-size: 16px;
 }
-
 .container{
   min-height: 00px;
 }
-
 .nosotros{
   text-align: justify;
 }
@@ -85,7 +99,6 @@ input{
 	padding-left: 10px;
   margin-bottom: 20px; 
 }
-
 textarea{
   background-color: #fbfbfb; 
 	width: 405px; 
@@ -99,15 +112,11 @@ textarea{
   margin-bottom: 20px; 
   padding-top: 15px; 
 }
-
-
 label{
   display: block; 
 	float: center; 	
 }
-
-
-button{
+.button_formulario{
 	height: 45px; 
 	padding-left: 5px;
 	padding-right: 5px; 	
@@ -121,18 +130,12 @@ button{
 	width: 420px;   
   cursor: pointer;
 }
-
-
-button p{
+.button_formulario p{
 	color: #fff; 
 }
-
-
 span{
 	color: #333; 
 }
-
-
 .aviso{
 	font-size: 13px;  
 	color: #0e0e0e;  
@@ -158,29 +161,20 @@ p{
 	font-size: 14px; 
 	color: #0e0e0e; 
 }
-
-
 ::-webkit-input-placeholder {
  color: #a8a8a8;
 }
-
-
 ::-webkit-textarea-placeholder {
  color: #a8a8a8;
 }
-
-
 .formulario input:focus{
 	outline:0;
 	border: 1px solid #97d848;
 }
-
-
 .formulario textarea:focus{
 	outline:0;
 	border: 1px solid #97d848;
 }
-
 /* Estilos del Menu */
 .main-nav {
   opacity: 0;
@@ -239,30 +233,17 @@ p{
   color: white;
   background-color: #333;
 }
-.main-header__input{
-  display: block;
-  padding: 10px;
-  width: 50%;
-  max-width: 250px;
-  margin: 0 auto;
-  }
-
-
 
 .main {
   padding: auto;
 }
-
-
 .cantidadCarrito{
-  font-family: "Inconsolata";
   background-color: #333;
   color: white;
   text-align: center;
   font-size: larger;
 }
 /* ESTILOS DE SLIDER */
-
 h1 {
   text-align: center;
 }
@@ -287,6 +268,7 @@ h1 {
 .imagenes{
   height: 400px;
   width: 100%;
+  object-fit: cover;
 }
 .carrusel-elemento {
   float: left;
@@ -398,21 +380,20 @@ h1 {
   color: #FF4E00;
   font-weight: bold;
 }
-.product__icon {
-  display: block;
-  margin-top: 10px;
+
+.product a, a:hover,a:visited,a:active{
+text-decoration: none;
 }
-.product:hover .product__icon {
-  color: #FF4E00;
-}
+
 .container__testimonials{
   text-align: center;
   background: #F7F7F7;
   padding: 20px;
-  margin: auto;
+  margin: 30px;
+ 
 }
 .testimonial__txt{
-  color: #777;
+  color: #212121;
 }
 .container-editor{
   margin-top: 20px;
@@ -523,6 +504,9 @@ h1 {
     width: 290px;
     margin: auto;
   }
+  .main-header__input{
+     margin-top: 0;
+    }
   
 }
 

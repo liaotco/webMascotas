@@ -32,15 +32,18 @@
           </ul>
         </nav>
       </div>
-          <div class="main-header__container">
-            <p class="news">Newsletter</p>
-            <input type="email" class="main-header__input" placeholder="Email">
-          </div>
-          <div class="main-header__container">
-          <a href="#" class="main-header__link" ><i class="fas fa-user"></i></a>
-          <div class="btn-abrir">My cart<i class="fas fa-shopping-cart"></i> <p class="cantidadCarrito">{{cantidadProd}}</p></div>
-          </div>
+      <div class="main-header__container">
+        <form action="{% url 'insertarSubscripcion' %}" method="POST"class="news">{% csrf_token %}   
+          <button>Newsletter</button>
+          <input type="email" name="email" class="main-header__input" placeholder="Email">
+        </form>
       </div>
+      
+      <div class="main-header__container">
+         <a href="#" class="main-header__link" ><i class="fas fa-user"></i></a>
+         <div class="btn-abrir">My cart<i class="fas fa-shopping-cart"></i> <p class="cantidadCarrito">{{cantidadProd}}</p></div>
+         </div>
+    </div>
   </header>
   <div class="social">
           <ul>

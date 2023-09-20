@@ -9,6 +9,13 @@ class Producto(models.Model):
     imagen=models.CharField(max_length=254,blank=True)
     def __str__(self):
         return self.nombre
+    
+class Subscripcion(models.Model):
+    email = models.CharField(max_length=50,blank=False)
+    def __str__(self):
+        return self.email
+    
+        
 """
 class Empleado(models.Model):
     emp_no=models.PositiveSmallIntegerField(primary_key=True)

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from appGestion.models import Producto
+from appGestion.models import *
 from appCarrito.carrito import Carrito
+
 
 # Create your views here.
 def pruebas(request):
@@ -52,5 +53,10 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect('verCarrito')
 
-
-
+def insertarSubscripcion(request):
+    if request.method == 'POST':
+        var_email=request.POST['email']
+        subscripcion=Subscripcion.objects.create(email=var_email)
+        return redirect('inicio')    
+    return inicio(request)
+ 
