@@ -41,6 +41,7 @@ img {
   border-radius: 5px;
   border:none;
   padding: 5px;
+  margin: 0 auto;  
 }
 .news{ 
     text-align: center;
@@ -48,15 +49,21 @@ img {
     display: flex;
     gap:5px;
   } 
-  
+
+  @media screen and (min-width:320px) 
+{
+  .main-header__input {width:100px}
+}
 
 .main-header__input{
   display:inline;
-  width:  200px;
+  min-width: 200px;
   margin: 0 auto;
   font-size:medium;
-  margin-right: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
   }
+
 
 .main-header__link {
   color: #333;
@@ -78,15 +85,19 @@ img {
 }
 /*Estilos formulario contacto*/
 .contact_form{	
-	width: 460px; 
+  overflow: hidden;
+	width: 660px; 
   height: auto;
   margin: auto;
 	border-radius: 10px;  	
-	padding-bottom: 20px;  
-  background-color: #fbfbfb; 
-  padding-left: 30px; 
+	background-color: #fbfbfb; 
+  padding:auto;
+  text-align: center;
+  align-items: center;
+  background: #F7F7F7;
 }
-input{
+
+.input_form{
 	background-color: #fbfbfb; 
 	width: 408px; 
 	height: 40px; 
@@ -98,7 +109,7 @@ input{
 	padding-left: 10px;
   margin-bottom: 20px; 
 }
-textarea{
+.textarea_form{
   background-color: #fbfbfb; 
 	width: 405px; 
 	height: 150px; 
@@ -506,8 +517,12 @@ text-decoration: none;
   .main-header__input{
      margin-top: 0;
     }
-  
+  .contact_form{width: 320px;	}
+  .input_form{width: 100px;}
+  .button_formulario{width: 100px;}
 }
+
+
 
   @media screen and (min-width:480px) {
     .centering{margin: auto;}
