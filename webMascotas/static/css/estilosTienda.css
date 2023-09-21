@@ -81,12 +81,12 @@ img {
   min-height: 00px;
 }
 .nosotros{
-  text-align: justify;
+  text-align: left;
 }
 /*Estilos formulario contacto*/
 .contact_form{	
   overflow: hidden;
-	width: 660px; 
+	width: 100%; 
   height: auto;
   margin: auto;
 	border-radius: 10px;  	
@@ -99,7 +99,7 @@ img {
 
 .input_form{
 	background-color: #fbfbfb; 
-	width: 408px; 
+	width: 60%; 
 	height: 40px; 
 	border-radius: 5px;  
 	border-style: solid; 
@@ -108,10 +108,11 @@ img {
 	margin-top: 10px;  
 	padding-left: 10px;
   margin-bottom: 20px; 
+  margin: 0 auto;
 }
 .textarea_form{
   background-color: #fbfbfb; 
-	width: 405px; 
+	width: 70%; 
 	height: 150px; 
 	border-radius: 5px;  
 	border-style: solid; 
@@ -121,6 +122,8 @@ img {
 	padding-left: 10px;
   margin-bottom: 20px; 
   padding-top: 15px; 
+  margin: 0 auto;
+  resize: none;
 }
 label{
   display: block; 
@@ -137,8 +140,9 @@ label{
 	border-color: #333; 
 	border-style: solid; 
 	border-radius: 10px;	
-	width: 420px;   
+	width: 60%;   
   cursor: pointer;
+ line-height: 45px;
 }
 .button_formulario p{
 	color: #fff; 
@@ -151,17 +155,18 @@ span{
 	color: #0e0e0e;  
 }
 
+.container__testimonials h1{ text-align: left;}
 
 h1{
-	font-size: 39px;  
-	text-align: letf; 
+	font-size: 6vh;  
+	text-align: left; 
 	padding-bottom: 20px; 
 	color: #333;
 }
 
 
 h3{
-	font-size: 16px; 
+	font-size: 3vh; 
 	padding-bottom: 30px;
 	color: #0e0e0e;   
 }
@@ -245,7 +250,7 @@ p{
 }
 
 .main {
-  padding: auto;
+  padding: 0;
 }
 .cantidadCarrito{
   background-color: #333;
@@ -399,7 +404,7 @@ text-decoration: none;
   text-align: center;
   background: #F7F7F7;
   padding: 20px;
-  margin: 30px;
+  margin: 0 auto;
  
 }
 .testimonial__txt{
@@ -517,9 +522,9 @@ text-decoration: none;
   .main-header__input{
      margin-top: 0;
     }
-  .contact_form{width: 320px;	}
-  .input_form{width: 100px;}
-  .button_formulario{width: 100px;}
+  .contact_form{width: 50%;	}
+  .input_form{width: 50%;}
+  .button_formulario{width: 50%;}
 }
 
 
