@@ -28,9 +28,11 @@ function showPopupLogin(){
 }
 function showPopupAgregar(){
   $('.mensaje_añadir').addClass('show');
+  setTimeout(3000);
 }
 function showPopupEliminar(){
   $('.mensaje_eliminar').addClass('show');
+  setTimeout(3000);
 }
 
 
@@ -50,8 +52,7 @@ $(".btn-login").click(showPopupLogin);
 $(".btn-agregar").click(showPopupAgregar);
 $(".btn-eliminar").click(showPopupEliminar);
 
-setTimeout(showPopupAgregar, 2000);
-setTimeout(showPopupEliminar, 2000);
+
 });
 
 

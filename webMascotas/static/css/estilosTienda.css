@@ -542,15 +542,16 @@ text-decoration: none;
   position:fixed;
   right:-130px;
   top:400px;
-  width: 210px;
+  width: 220px;
   z-index: 0;
   background-color: transparent;
+
 
 }
 .sticky li{
   list-style-type:none;
-  height:43px;
-  padding:0px;
+  height:57px;
+  padding:0;
   margin:0px 0px 1px 0px;
   -webkit-transition:all 0.25s ease-in-out;
   -moz-transition:all 0.25s ease-in-out;
@@ -559,16 +560,17 @@ text-decoration: none;
   cursor:pointer;
   color:white;
   font-size: xx-large;
+  margin-bottom: 2px;
   
 }
 .sticky li:hover{
-  margin-left:-15px;
+  margin-left:-25px;
 }
 
-.sticky li .icon-facebook {background:#3b5998;} /* Establecemos los colores de cada red social, aprovechando su class */
-.sticky li .icon-twitter {background: #00abf0;}
-.sticky li .icon-googleplus {background: #d95232;}
-.sticky li .icon-pinterest {background: #ae181f;}
+.sticky li .icon-facebook {background:#3b5998; padding: 12px;} /* Establecemos los colores de cada red social, aprovechando su class */
+.sticky li .icon-twitter {background: #00abf0;padding: 12px;}
+.sticky li .icon-googleplus {background: #d95232;padding: 12px;}
+.sticky li .icon-pinterest {background: #ae181f;padding: 12px;}
   
 /*ESTILOS POP UP*/
 .modal_btn{ 
