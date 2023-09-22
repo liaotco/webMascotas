@@ -4,7 +4,12 @@
     <title>{% block title %}Mi carrito{% endblock %}</title>
 
 {% block content %}
-
+<div class="mensaje_añadir">
+	Producto añadido con éxito!
+</div>
+<div class="mensaje_eliminar">
+	Producto eliminado con éxito!
+</div>
 		<div class="contenedor-carrito">
 			<div class="carrito-botones">
 			   	<a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito">
@@ -22,8 +27,8 @@
 							<span class="subtotal-producto-carrito">{{value.subtotal}} €</span>
                         </div>
 
-                        <a class="carrito-botones" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
-                        <a class="carrito-botones" href="{% url 'sacarcarrito' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></i></a>
+                        <a class="carrito-botones btn-agregar" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
+                        <a class="carrito-botones btn-eliminar" href="{% url 'sacarcarrito' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></a>
 
 					</div>
 					{% endfor %}
@@ -55,5 +60,6 @@
 					</div>
 
 		</div>
+
 
 		{% endblock %}

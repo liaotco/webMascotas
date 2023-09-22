@@ -4,19 +4,22 @@
     <title>{% block title %}Bienvenido a nuestra Tienda Online{% endblock %}</title>
 {% block content %}
     <span class="container">
+        <div class="mensaje_añadir">
+            Producto añadido con éxito!
+        </div>
             <span class="centering">
                 <section class="articles">
                     {% for p in productos %}
                     <article>
                         <figure class="card">
-                            <img src="{% static 'images/' %}{{p.imagen}}" class="w3-round" style="width:90%" alt=""> 
+                            <img src="{% static 'images/' %}{{p.imagen}}" alt=""> 
                           
                         </figure>
                         <div class="article-preview">
                             <h2 class="card-title">{{p.nombre}}</h2>
                             <p>
                                 <p class="product__price">{{p.precio}} €</p>
-                                <a class="agregar" href="agregar/{{p.id}}"><i class="fa-solid fa-cart-plus fa-2xl"></i></a>
+                                <a class="agregar btn-agregar" href="agregar/{{p.id}}"><i class="fa-solid fa-cart-plus fa-2xl"></i></a>
                             </p>
                         </div>
                     </article>
@@ -25,5 +28,5 @@
            
             </span>           
         </span>
-    
+ 
 {% endblock %}

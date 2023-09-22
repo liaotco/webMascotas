@@ -26,6 +26,14 @@ function showPopupLogin(){
   $('.modal_login').addClass('show');
      
 }
+function showPopupAgregar(){
+  $('.mensaje_añadir').addClass('show');
+}
+function showPopupEliminar(){
+  $('.mensaje_eliminar').addClass('show');
+}
+
+
 
 
 $("#close").click(function(){
@@ -39,6 +47,11 @@ $("#close").click(function(){
 $(".btn-abrir").click(showPopupCar);
 $(".btn-news").click(showPopupNews);
 $(".btn-login").click(showPopupLogin);
+$(".btn-agregar").click(showPopupAgregar);
+$(".btn-eliminar").click(showPopupEliminar);
+
+setTimeout(showPopupAgregar, 2000);
+setTimeout(showPopupEliminar, 2000);
 });
 
 
