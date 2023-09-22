@@ -8,19 +8,41 @@ btnMenu.addEventListener('click', function(){
 
 $(document).ready(function () {
   // POP up 
-function showPopup(){
+function showPopupCar(){
     $('.pop-up').addClass('show');
     $('.pop-up-wrap').addClass('show');
+    $('.modal_carrito').addClass('show');
+           
 }
+function showPopupNews(){
+  $('.pop-up').addClass('show');
+  $('.pop-up-wrap').addClass('show');
+  $('.modal_news').addClass('show');
+     
+}
+function showPopupLogin(){
+  $('.pop-up').addClass('show');
+  $('.pop-up-wrap').addClass('show');
+  $('.modal_login').addClass('show');
+     
+}
+
 
 $("#close").click(function(){
     $('.pop-up').removeClass('show');
     $('.pop-up-wrap').removeClass('show');
+    $('.modal_carrito').removeClass('show');
+    $('.modal_news').removeClass('show');
+    $('.modal_login').removeClass('show');
 });
 
-$(".btn-abrir").click(showPopup);
-
+$(".btn-abrir").click(showPopupCar);
+$(".btn-news").click(showPopupNews);
+$(".btn-login").click(showPopupLogin);
 });
+
+
+
 
 /*VENTANA EMERGENTE PARA DETALLE*/
 function ventanaSecundaria (URL){

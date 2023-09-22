@@ -32,11 +32,8 @@
           </ul>
         </nav>
       </div>
-      <div class="main-header__container">
-        <form action="{% url 'insertarSubscripcion' %}" method="POST"  class="news">{% csrf_token %}   
-          <button>Newsletter</button>
-          <input type="email" name="email" class="main-header__input" placeholder="Email">
-        </form>
+      <div class="main-header__container">       
+          <div class="btn-news">Subscribirme</div>                      
       </div>
       
       <div class="main-header__container">
@@ -61,35 +58,50 @@
   <div class="pop-up">
     <div class="pop-up-wrap">
       <div class="subcription">
+        <i class="far fa-times-circle" id="close"></i>
         <div class="sub-content">
-          <i class="far fa-times-circle" id="close"></i>
+          <div class="modal_carrito">
             <div class="carrito-botones">
               <a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito"><i class="fa-solid fa-trash-can fa-2xl"></i></a>
             </div>
-        </div>
            {% if request.session.carrito.items %}
            {% for key,value in request.session.carrito.items %}
-        <div class="productos-carrito">
-          <div class="info-productos-carrito">
+            <div class="productos-carrito">
+              <div class="info-productos-carrito">
                <span class="cantidad-producto-carrito">{{value.cantidad}}</span>
                <p class="titulo-producto-carrito">{{value.nombre}}</p>
                <span class="precio-producto-carrito">{{value.precio}} €</span>
                <span class="subtotal-producto-carrito">{{value.subtotal}} €</span>
-          </div>
+              </div>
               <a class="carrito-botones" href="{% url 'agregar' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
               <a class="carrito-botones" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></i></a>
-        </div>
+            </div>
            {% endfor %}
            {% else %}
            <h2>No hay Productos Seleccionados</h2>
            {% endif %}
-              <div class="carrito-total">
+           <div class="carrito-total">
                 <h3>Total:</h3>
                 <span class="total-pagar"><h3>{{total_carrito}} €</h3></span>
-              </div>
+           </div>
                   <h1><a href="{% url 'verCarrito' %}">  <p class="completar-compra">Finalizar compra</p></a></h1>
+          </div>
+          <div class="modal_news">
+            <h3 class="modal-title">Aquí puedes subscribirte para recibir nuestras novedades, déjanos tu nombre y email:</h3>
+            <form action="{% url 'insertarSubscripcion' %}" method="POST"> {% csrf_token %}   
+               <input type="nombre" name="nombre" class="modal_news__input" placeholder="Nombre">
+               <input type="email" name="email" class="modal_news__input" placeholder="Email">
+               <button class="news">¡¡¡ Subscribirme !!!</button>
+            </form>
+          </div>
+          <div class="modal_login">
+            <form action="#" method="POST"> {% csrf_token %}   
+             
+            </form>
+          </div>
       </div>
     </div>
   </div>
+  
 </body>
 </html>

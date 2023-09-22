@@ -34,21 +34,7 @@ img {
   align-items:center;
 }
 
-.news button{
-  background-color: #FF4E00;
-  color: white;
-  padding:0 5px;
-  border-radius: 5px;
-  border:none;
-  padding: 5px;
-  margin: 0 auto;  
-}
-.news{ 
-    text-align: center;
-    font-size:large;
-    display: flex;
-    gap:5px;
-  } 
+
 
   @media screen and (min-width:320px) 
 {
@@ -195,7 +181,7 @@ p{
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
-  z-index: 999999;
+  
 }
 .menu{
   position: absolute;
@@ -405,6 +391,8 @@ text-decoration: none;
   background: #F7F7F7;
   padding: 20px;
   margin: 0 auto;
+  margin-top: 10px;
+
  
 }
 .testimonial__txt{
@@ -514,7 +502,12 @@ text-decoration: none;
     padding: 0;
     margin:auto;
   }
-  
+  .social {
+    position: absolute; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+    left: 0; /* Establecemos la barra en la izquierda */
+    bottom: 0; /* Bajamos la barra 200px de arriba a abajo */
+    z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+  }
   .container{
     width: 290px;
     margin: auto;
@@ -539,6 +532,12 @@ text-decoration: none;
   .container{
     width: 320px;
     margin: auto;
+  }
+    .social {
+    position: absolute; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+    left: 0; /* Establecemos la barra en la izquierda */
+    bottom: 0; /* Bajamos la barra 200px de arriba a abajo */
+    z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
   }
 }
 /*Estilos para tablet*/
@@ -689,7 +688,7 @@ text-decoration: none;
 }
 
   .social {
-    position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+    position: absolute; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
     left: 0; /* Establecemos la barra en la izquierda */
     top: 200px; /* Bajamos la barra 200px de arriba a abajo */
     z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
@@ -723,10 +722,32 @@ text-decoration: none;
 
 
 
-/*ESTILOS POP UP*/
-
-.btn-abrir{
   
+/*ESTILOS POP UP*/
+.news{ 
+  background-color: #FF4E00;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+} 
+.btn-news{
+  background-color: #FF4E00;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.btn-login{
+  color:#333;
+  padding: 10px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+.btn-abrir{
   color:#333;
   padding: 10px;
   display: inline-block;
@@ -751,20 +772,23 @@ text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
+  /*visibility: hidden;*/
+  display: none;
   
 }
 
 .pop-up-wrap{
   display: flex;
   align-items: center;
-  width: 90%;
-  max-width: 950px;
   transform: scale(0.6);
   opacity: 0;
   transition: .3s ease all;
-  
+  padding: 50px 50px;
 }
+.modal_carrito, .modal_news, .modal_login{
+  display: none;
+}
+
 .subcription::before{
   content: '';
   position: absolute;
@@ -780,14 +804,15 @@ text-decoration: none;
 background-color: #fff;
   flex-basis: 0;
   flex-grow: 2;
-  height: 700px;
+  min-height: fit-content;
+  min-width: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   text-align: center;
-  padding-left:50px;
+  
 }
 
 .sub-content{
@@ -807,44 +832,51 @@ background-color: #fff;
 }
 
 .pop-up.show{
-  visibility: visible;
+  /*visibility: visible;*/
+  display: block;
+  margin:0 auto;
+  position: absolute;
+
 }
 
 .pop-up-wrap.show{
   transform: scale(1);
   opacity: 1;
+  display: block;
+  margin:0 auto;
+  position: absolute;
+  left: 50%;
+  top: 40%;  
+  transform: translate(-50%, -50%);
 }
 
-.pop-up-title{
-  width: 100px;
-  flex-basis: 0;
-  flex-grow:1.5;
-  height: 700px;
+
+.modal_carrito.show, 
+.modal_news.show,
+.modal_login.show {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  position: relative;
-  background-size: 165%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #FF4E00;
-  color:white;
-  text-decoration: none;
+  overflow: hidden;
+  justify-content: space-around;
+  margin: 0 auto;
+  background-color: #00abf0;
+  width: 50%;
+
 }
 .completar-compra a{
   text-decoration: none;
 }
-.completar-compra  {
+.completar-compra{
  
   font-size: x-large;
   background-color: #FF4E00;
   color: white;
-
+text-decoration: none;
   padding: 10px;
 }
 
-.pop-up-title::after{
+.modal-title::after{
   position: absolute;
   top: 0;
   bottom: 0;
@@ -853,14 +885,14 @@ background-color: #fff;
   width: 100px;
 }
 
-.pop-up-title::before{
+.modal-title::before{
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-  z-index: -1;
+
 }
 
 @media only screen and (max-width: 980px){

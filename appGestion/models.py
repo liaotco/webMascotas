@@ -12,6 +12,7 @@ class Producto(models.Model):
 
 
 class Subscripcion(models.Model):
+    nombre=models.CharField(max_length=50,blank=False,default=True)
     email = models.CharField(max_length=50,blank=False)
     def __str__(self):
         return self.email

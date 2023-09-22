@@ -53,7 +53,7 @@ def limpiar_carrito(request):
 
 class insertarSubscripcion(CreateView):
     model=Subscripcion
-    fields=["email"]
+    fields=["nombre","email"]
     success_url=reverse_lazy('inicio')
 
         # import the necessary components first
