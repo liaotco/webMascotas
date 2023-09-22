@@ -731,6 +731,7 @@ text-decoration: none;
   padding: 10px;
   border: none;
   cursor: pointer;
+  margin-top: 20px;
 } 
 .btn-news{
   background-color: #FF4E00;
@@ -814,13 +815,11 @@ background-color: #fff;
   text-align: center;
   
 }
-
+.modal_news__input{width: auto;}
 .sub-content{
   width: 100%;
   gap:50px;
 }
-
-
 
 #close{
   position: absolute;
@@ -860,10 +859,11 @@ background-color: #fff;
   overflow: hidden;
   justify-content: space-around;
   margin: 0 auto;
-  background-color: #00abf0;
-  width: 50%;
-
+  width: 60%;
+  padding-block-start: 50px;
+  padding-block-end: 50px;
 }
+
 .completar-compra a{
   text-decoration: none;
 }
