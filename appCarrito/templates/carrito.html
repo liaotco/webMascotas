@@ -10,42 +10,54 @@
 <div class="mensaje_eliminar">
 	Producto eliminado con éxito!
 </div>
-		<div class="contenedor-carrito">
-			<div class="carrito-botones">
-			   	<a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito">
-				<i class="fa-solid fa-trash-can fa-2xl"></i>
-		        </a>
-			</div>
-			{% if request.session.carrito.items %}
-			{% for key,value in request.session.carrito.items %}
-					<div class="productos-carrito">
-
-						<div class="info-productos-carrito">
-                            <span class="cantidad-producto-carrito">{{value.cantidad}}</span>
-							<span class="titulo-producto-carrito">{{value.nombre}}</span>
-                            <span class="precio-producto-carrito">{{value.precio}}€</span>
-							<span class="subtotal-producto-carrito">{{value.subtotal}}€ </span>
-                        </div>
-						<div class="carrito-botones">
-                        	<a class="btn-agregar" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
-                        	<a class="btn-eliminar" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></a>
-					</div>
-					</div>
-					{% endfor %}
-					{% else %}
-					<h2>No hay Productos Seleccionados</h2>
-					{% endif %}
-                    <div class="carrito-total">
-                        <h3>Total:</h3>
-                        <span class="total-pagar"><h3>{{total_carrito}} €</h3></span>
-
-					</div>
-					<div class="carrito-pagar">
-						<div id="paypal-button-container"></div>
-						<script>
-
-							paypal.Buttons({
-
+<table class="content-table"> 
+	<thead> 
+	<tr>
+		<td colspan="5">
+			<a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito">
+			<i class="fa-solid fa-trash-can"></i></a>
+		</td>
+	</tr>	
+	<tr> 
+		<th>Cantidad</th> 
+		<th>Producto</th> 
+		<th>Precio</th> 
+		<th>Subtotal</th> 
+		<th>Operaciones</th>
+	</tr> 
+	</thead> 
+	<tbody> 
+		{% if request.session.carrito.items %}
+		{% for key,value in request.session.carrito.items %}
+		<tr>            
+			<td><span class="cantidad-producto-carrito">{{value.cantidad}}</span></td> 
+			<td><span class="titulo-producto-carrito">{{value.nombre}}</span></td>
+			<td><span class="precio-producto-carrito">{{value.precio}}€</span></td> 
+			<td><span class="subtotal-producto-carrito">{{value.subtotal}}€ </span></td> 
+			<td>
+				<a class="btn-agregar" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
+			</td>
+			<td>
+				<a class="btn-eliminar" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></a>
+			</td>
+		</tr> 
+		{% endfor %}
+		{% else %}
+		<tr>
+			<td colspan="5">
+				<h2>No hay Productos Seleccionados</h2>
+			</td>
+		{% endif %}
+		<tr>
+			<td colspan="5">
+				<h3>Total:</h3><h3>{{total_carrito}} €</h3>
+			</td>			
+		</tr>
+		<tr>
+			<td colspan="5" rowspan="5">		
+				<div id="paypal-button-container"></div>
+					<script>
+						paypal.Buttons({
 							createOrder: function(data, actions) {
 								return actions.order.create({
                             	purchase_units: [{
@@ -56,10 +68,10 @@
                         			});
                     			},
 							}).render('#paypal-button-container');
-						</script>
-					</div>
-
-		</div>
-
-
-		{% endblock %}
+					</script>
+				</div>
+			</td>
+		</tr>
+	</tbody> 
+</table>
+{% endblock %}
