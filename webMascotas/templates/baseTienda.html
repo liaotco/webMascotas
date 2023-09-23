@@ -28,33 +28,40 @@
             <li class="menu__item"><a href="{% url 'nosotros' %}" class="menu__link">Nosotros</a></li>
             <li class="menu__item"><a href="{% url 'contacto' %}" class="menu__link">Contacto</a></li>
             <li class="menu__item"><a href="{% url 'tienda' %}" class="menu__link">Tienda</a></li>
+            <li class="menu__item"><a href="{% url 'verCarrito' %}" class="menu__link">Completar compra</a></li>
             <li class="menu__item"><a href="{% url 'webGestion' %}" class="menu__link">Gestión</a></li>
+
           </ul>
         </nav>
+      </div>
+      <div class="main-header__container">
+        <div class="sticky-container">
+        <ul class="sticky">
+          <li><a href="http://www.facebook.com" target="_blank" class="icon-facebook"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></a></li>
+          <li><a href="http://www.twitter.com" target="_blank" class="icon-twitter"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></a></li>
+          <li><a href="http://www.pinterest.com" target="_blank" class="icon-pinterest"><i class="fa-brands fa-pinterest" style="color: #ffffff;"></i></a></li>
+          <li><a href="http://www.instagram.com" target="_blank" class="icon-instagram"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a></li>
+        </ul>
+        </div>
       </div>
       <div class="main-header__container">       
           <div class="btn-news">Subscribirme</div>                      
       </div>
-      
+
       <div class="main-header__container">
          <a href="#" class="main-header__link" ><i class="fas fa-user"></i></a>
          <div class="btn-abrir">My cart<i class="fas fa-shopping-cart"></i> <p class="cantidadCarrito">{{cantidadProd}}</p></div>
          </div>
     </div>
   </header>
-  <div class="sticky-container">
-    <ul class="sticky">
-      <li><a href="http://www.facebook.com" target="_blank" class="icon-facebook"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></a></li>
-      <li><a href="http://www.twitter.com" target="_blank" class="icon-twitter"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></a></li>
-      <li><a href="http://www.googleplus.com" target="_blank" class="icon-googleplus"><i class="fa-brands fa-google" style="color: #ffffff;"></i></a></li>
-      <li><a href="http://www.pinterest.com" target="_blank" class="icon-pinterest"><i class="fa-brands fa-pinterest" style="color: #ffffff;"></i></a></li>
-    </ul>
-</div>
+  
   <main class="main">
     <div class="container">
        {% block content %}{% endblock %}
     </div>
   </main>
+
+
   <div class="pop-up">
     <div class="pop-up-wrap">
       <div class="subcription">
@@ -102,6 +109,6 @@
       </div>
     </div>
   </div>
-  
+
 </body>
 </html>
