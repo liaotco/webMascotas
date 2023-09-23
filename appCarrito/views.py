@@ -38,13 +38,9 @@ def sacar_producto(request,prod_id):
     carrito=Carrito(request)
     producto=Producto.objects.get(id=prod_id)
     carrito.sacar(producto)
-    return redirect('tienda')
-
-def sacarcarrito(request,prod_id):
-    carrito=Carrito(request)
-    producto=Producto.objects.get(id=prod_id)
-    carrito.sacar(producto)
     return redirect('verCarrito')
+
+
 
 def limpiar_carrito(request):
     carrito=Carrito(request)

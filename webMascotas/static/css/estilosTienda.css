@@ -234,7 +234,8 @@ p{
   color: white;
   background-color: #333;
 }
-
+.container{
+margin: 0 auto;;}
 .main {
   padding: 0;
 }
@@ -711,6 +712,11 @@ background-color: #fff;
   align-items: center;
   background-color: lightgreen;
   display: block;
+  text-align: center;
+  justify-content: center;
+  padding: 5px;
+  width: fit-content;
+  border: #1bc59b 2px dotted;
 }
 
 .modal_carrito.show, 
@@ -722,7 +728,7 @@ background-color: #fff;
   overflow: hidden;
   justify-content: space-around;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   padding-block-start: 50px;
   padding-block-end: 50px;
 }
@@ -775,7 +781,7 @@ background-color: #fff;
   .contact_form{width: 50%;	}
   .input_form{width: 50%;}
   .button_formulario{width: 50%;}
-
+.modal_btn h1{font-size: -1em;}
 
 }
   @media screen and (min-width:480px) {

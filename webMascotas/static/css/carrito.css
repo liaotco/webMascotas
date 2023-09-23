@@ -10,16 +10,17 @@ display: flex;
 flex-wrap: wrap;
 flex-direction: column;
 justify-content:space-between;
-padding: 30px;
-position: relative;
+
+position: absolute;
 background-color: #fff;
 width: 600px;
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
 border-radius: 10px;
 align-items: center;
-padding:auto;
-align-items: center;
-left:100px
+margin: 0 auto;
+left: 35%;
+top: 20%;  
+
 }
          
 .productos-carrito{
@@ -28,7 +29,7 @@ align-items: center;
 padding: 15px;
 justify-content: space-between;
 border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-width: max-content;
+width: fit-content;
 
 }
  
@@ -111,16 +112,58 @@ font-size: xx-large;
 font-weight: 900;
 }
 
-@media screen and (max-width: 480px){
+@media screen and (min-width: 320px){
     .contenedor-carrito{
+        position: absolute;
         display:block;
-        justify-content: stretch;
-        width: 300px;
-        margin: auto;
-        left: 10px;
+        max-width: 300px;
+        margin: 0 auto;
+        left: 10%;
+        top: 35%; 
     }
     .productos-carrito{
-        display: b;
+        
+        align-items: center;
+        padding: 2px;
+        justify-content:stretch;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+        width: 300px;
+        margin: 0 auto;
+
+        }
+    .info-productos-carrito{
+        display: flex;
+        align-items: center;
+        padding: 2px;
+        justify-content:stretch;
+    }
+    .carrito-botones {
+        flex-direction: row;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        gap: 10px;}
+    .container{
+        display: block;
+    }
+    .item{
+        height: 200px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 480px){
+    .contenedor-carrito{
+        position: absolute;
+        display:block;
+        max-width: 300px;
+        margin: 0 auto;
+        left: 35%;
+        top: 35%; 
+    }
+    .productos-carrito{
+        
         align-items: center;
         padding: 2px;
         justify-content:stretch;
@@ -151,4 +194,7 @@ font-weight: 900;
 }
 
 
+/*Estilos para tablet*/
+@media screen and (min-width:768px) {
 
+}

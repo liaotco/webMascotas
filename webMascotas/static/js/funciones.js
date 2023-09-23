@@ -28,16 +28,12 @@ function showPopupLogin(){
 }
 function showPopupAgregar(){
   $('.mensaje_añadir').addClass('show');
-  setTimeout(3000);
+  setTimeout(4000);
 }
 function showPopupEliminar(){
   $('.mensaje_eliminar').addClass('show');
-  setTimeout(3000);
+  setTimeout(4000);
 }
-
-
-
-
 $("#close").click(function(){
     $('.pop-up').removeClass('show');
     $('.pop-up-wrap').removeClass('show');
