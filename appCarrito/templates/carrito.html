@@ -23,13 +23,13 @@
 						<div class="info-productos-carrito">
                             <span class="cantidad-producto-carrito">{{value.cantidad}}</span>
 							<span class="titulo-producto-carrito">{{value.nombre}}</span>
-                            <span class="precio-producto-carrito">{{value.precio}} €</span>
-							<span class="subtotal-producto-carrito">{{value.subtotal}} €</span>
+                            <span class="precio-producto-carrito">{{value.precio}}€</span>
+							<span class="subtotal-producto-carrito">{{value.subtotal}}€ </span>
                         </div>
-
-                        <a class="carrito-botones btn-agregar" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
-                        <a class="carrito-botones btn-eliminar" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></a>
-
+						<div class="carrito-botones">
+                        	<a class="btn-agregar" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
+                        	<a class="btn-eliminar" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></a>
+					</div>
 					</div>
 					{% endfor %}
 					{% else %}
