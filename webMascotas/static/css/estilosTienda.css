@@ -10,9 +10,10 @@
   font-family: "Inconsolata";
 }
 /*#ff9b00, #48433c, #ebe9e7, #c2bdb6, #379bb5*/
-
+html{margin:0 auto;}
 body {
   font-family: "Inconsolata";
+  overflow: hidden;
 }
 img {
   display: block;
@@ -31,6 +32,7 @@ img {
 .main-header__container{
   display: flex;
   justify-content: space-around;
+  font-size: 1.15em;
 }
 
 
@@ -40,19 +42,10 @@ img {
   .main-header__input {width:100px}
 }
 
-.main-header__input{
-  display:inline;
-  min-width: 200px;
-  margin: 0 auto;
-  font-size:medium;
-  margin-right: 20px;
-  border-radius: 5px;
-  }
-
 
 .main-header__link {
   color: #333;
-  padding: 20px;
+  padding: 15px;
 }
 .main-header__link:hover {
   color: white;
@@ -197,7 +190,7 @@ p{
 }
 .menu__link {
   font-family: "Inconsolata";
-  padding: 20px;
+  padding: 6px;
   color: white;
   text-decoration: none;
   position: relative;
@@ -235,9 +228,11 @@ p{
   background-color: #333;
 }
 .container{
-margin: 0 auto;;}
+margin: 0 auto;
+margin-top: 15px;}
 .main {
-  padding: 0;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 .cantidadCarrito{
   background-color: #333;
@@ -660,7 +655,6 @@ text-decoration: none;
   left: 0;
   right: 0;
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-  z-index: -1;
 
 }
 .subcription{
@@ -675,7 +669,8 @@ background-color: #fff;
   align-items: center;
   position: relative;
   text-align: center;
-  
+  top:50%;
+
 }
 .modal_news__input{width: auto;}
 .sub-content{
@@ -704,7 +699,7 @@ background-color: #fff;
   margin:0 auto;
   position: absolute;
   left: 50%;
-  top: 40%;  
+  top: 50%;  
   transform: translate(-50%, -50%);
 }
 
@@ -717,6 +712,7 @@ background-color: #fff;
   padding: 5px;
   width: fit-content;
   border: #1bc59b 2px dotted;
+  z-index: 99999;
 }
 
 .modal_carrito.show, 
@@ -731,6 +727,8 @@ background-color: #fff;
   width: 80%;
   padding-block-start: 50px;
   padding-block-end: 50px;
+  z-index: 99999;
+  top:500px;
 }
 
 .modal-title::after{
@@ -768,6 +766,7 @@ background-color: #fff;
   .main {
     padding: 0;
     margin:0 auto;
+    margin-top: 30px;
   }
   .container{
     min-width: 320px;
@@ -787,6 +786,7 @@ background-color: #fff;
   .main {
     padding: 0;
     margin:auto;
+    margin-top: 30px;
   }
   
   .container{
