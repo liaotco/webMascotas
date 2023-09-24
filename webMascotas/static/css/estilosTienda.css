@@ -570,6 +570,8 @@ text-decoration: none;
 .sticky li .icon-instagram {background:#E4405F ;padding: 5px;}
   
 /*ESTILOS POP UP*/
+
+.btn_pagar,
 .modal_btn{ 
   background-color: #FF4E00;
   color: white;
@@ -580,11 +582,10 @@ text-decoration: none;
   margin-top: 20px;
   text-decoration: none;
 } 
-
-.modal_btn a:hover{text-decoration: none;}
-.modal_btn a:active{text-decoration:none;  background-color: #FF4E00;
+.btn_pagar, .modal_btn a:hover{text-decoration: none;}
+.btn_pagar, .modal_btn a:active{text-decoration:none;  background-color: #FF4E00;
   color: white;}
-.modal_btn a:visited{text-decoration: none;}
+.btn_pagar, .modal_btn a:visited{text-decoration: none;}
 
 .btn-news{
   background-color: #FF4E00;
