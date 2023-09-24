@@ -4,26 +4,23 @@
     <title>{% block title %}Mi carrito{% endblock %}</title>
 
 {% block content %}
-<div class="mensaje_añadir">
-	Producto añadido con éxito!
-</div>
-<div class="mensaje_eliminar">
-	Producto eliminado con éxito!
-</div>
+
+<div class="contenedor-carrito">	
+	<div class="mensaje_añadir">
+		Producto añadido con éxito!
+	</div>
+	<div class="mensaje_eliminar">
+		Producto eliminado con éxito!
+	</div>
 <table class="content-table"> 
 	<thead> 
-	<tr>
-		<td colspan="5">
-			<a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito">
-			<i class="fa-solid fa-trash-can"></i></a>
-		</td>
-	</tr>	
 	<tr> 
 		<th>Cantidad</th> 
 		<th>Producto</th> 
 		<th>Precio</th> 
 		<th>Subtotal</th> 
-		<th>Operaciones</th>
+		<th><a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito">
+			<i class="fa-solid fa-trash-can"></i></a></th>
 	</tr> 
 	</thead> 
 	<tbody> 
@@ -35,11 +32,9 @@
 			<td><span class="precio-producto-carrito">{{value.precio}}€</span></td> 
 			<td><span class="subtotal-producto-carrito">{{value.subtotal}}€ </span></td> 
 			<td>
-				<a class="btn-agregar" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
-			</td>
-			<td>
-				<a class="btn-eliminar" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></a>
-			</td>
+				<a class="btn-agregar carrito-botones" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
+				<a class="btn-eliminar carrito-botones" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></a>
+			</td>	
 		</tr> 
 		{% endfor %}
 		{% else %}
@@ -50,7 +45,7 @@
 		{% endif %}
 		<tr>
 			<td colspan="5">
-				<h3>Total:</h3><h3>{{total_carrito}} €</h3>
+				<h3>Total: {{total_carrito}} €</h3>
 			</td>			
 		</tr>
 		<tr>
@@ -74,4 +69,5 @@
 		</tr>
 	</tbody> 
 </table>
+</div>
 {% endblock %}

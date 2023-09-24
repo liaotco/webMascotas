@@ -68,31 +68,55 @@
         <i class="far fa-times-circle" id="close"></i>
         <div class="sub-content">
           <div class="modal_carrito">
-            <div class="carrito-botones">
-              <a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito"><i class="fa-solid fa-trash-can fa-2xl"></i></a>
-            </div>
-           {% if request.session.carrito.items %}
-           {% for key,value in request.session.carrito.items %}
-            <div class="productos-carrito">
-              <div class="info-productos-carrito">
-               <span class="cantidad-producto-carrito">{{value.cantidad}}</span>
-               <span class="titulo-producto-carrito">{{value.nombre}}</span>
-               <span class="precio-producto-carrito">{{value.precio}} €</span>
-               <span class="subtotal-producto-carrito">{{value.subtotal}} €</span>
+            
+              <div class="mensaje_añadir">
+                Producto añadido con éxito!
               </div>
-              <a class="carrito-botones" href="{% url 'agregar' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
-              <a class="carrito-botones" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></i></a>
+              <div class="mensaje_eliminar">
+                Producto eliminado con éxito!
+              </div>
+            <table class="content-table"> 
+              <thead> 
+              <tr> 
+                <th>Cantidad</th> 
+                <th>Producto</th> 
+                <th>Precio</th> 
+                <th>Subtotal</th> 
+                <th><a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito">
+                  <i class="fa-solid fa-trash-can"></i></a></th>
+              </tr> 
+              </thead> 
+              <tbody> 
+                {% if request.session.carrito.items %}
+                {% for key,value in request.session.carrito.items %}
+                <tr>            
+                  <td><span class="cantidad-producto-carrito">{{value.cantidad}}</span></td> 
+                  <td><span class="titulo-producto-carrito">{{value.nombre}}</span></td>
+                  <td><span class="precio-producto-carrito">{{value.precio}}€</span></td> 
+                  <td><span class="subtotal-producto-carrito">{{value.subtotal}}€ </span></td> 
+                  <td>
+                    <a class="btn-agregar carrito-botones" href="{% url 'agregarcarrito' key %}" title="Añadir producto"><i class="fa-solid fa-square-plus"></i></a>
+                    <a class="btn-eliminar carrito-botones" href="{% url 'sacar' key %}" title="Quitar producto"><i class="fa-solid fa-square-minus"></i></a>
+                  </td>	
+                </tr> 
+                {% endfor %}
+                {% else %}
+                <tr>
+                  <td colspan="5">
+                    <h2>No hay Productos Seleccionados</h2>
+                  </td>
+                {% endif %}
+                <tr>
+                  <td class="total-pagar" colspan="5">
+                    <h3>Total: {{total_carrito}} €</h3>
+                  </td>			
+                </tr>
+                </tbody> 
+            </table>
+            <h1><a href="{% url 'verCarrito' %}" class="modal_btn">Finalizar compra</a></h1>
             </div>
-           {% endfor %}
-           {% else %}
-           <h2>No hay Productos Seleccionados</h2>
-           {% endif %}
-           <div class="carrito-total">
-                <h3>Total:</h3>
-                <span class="total-pagar"><h3>{{total_carrito}} €</h3></span>
-           </div>
-                  <h1><a href="{% url 'verCarrito' %}" class="modal_btn">Finalizar compra</a></h1>
-          </div>
+          
+        
           <div class="modal_news">
             <h3 class="modal-title">Aquí puedes subscribirte para recibir nuestras novedades, déjanos tu nombre y email:</h3>
             <form action="{% url 'insertarSubscripcion' %}" method="POST"> {% csrf_token %}   
@@ -106,7 +130,8 @@
              
             </form>
           </div>
-      </div>
+       </div>
+     </div>
     </div>
   </div>
 
