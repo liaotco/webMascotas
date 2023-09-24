@@ -48,9 +48,16 @@ width: 80%;
 }
 .total-pagar{    border: none}
 
-@media (min-width: 480px), (min-width: 320px) 
+/*
+@media screen and (min-width: 480px), (min-width: 320px) 
   {
-	
+	    .contenedor-carrito{
+        display:block;
+        justify-content: stretch;
+        width: 300px;
+        margin: auto;
+        left: 10px;
+    }
 		table, thead, tbody, th, td, tr {
 			display: block;
 		}
@@ -85,3 +92,4 @@ width: 80%;
 		}
 
     }
+*/
