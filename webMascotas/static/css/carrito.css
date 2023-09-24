@@ -1,12 +1,13 @@
-table, th, td {
-    border-bottom: 1px solid black;
+.contenedor-carrito table, th, td {
     border-collapse: collapse;
+  
   }
-  th,td{
+.contenedor-carrito th,td{
       padding: 15px;
+      border-bottom: 1px solid black;
   }
 
-  th  {
+.contenedor-carrito th  {
     color: #FF4E00;
     font-weight: 700;
     font-size: 20px; 
@@ -21,17 +22,16 @@ table, th, td {
     text-decoration: none;
     text-align: center;
 }
-h2,h3{
+.contenedor-carrito h2, h3{
     font-size: 30px;
-    font-weight: 700;
-    text-align: center;
+    text-align: justify;
 }
 
 .contenedor-carrito{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content:space-between;
     padding: 30px;
     position: relative;
     background-color: #fff;
@@ -40,21 +40,79 @@ h2,h3{
     align-items: center;
     padding:auto;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
-           
+.paypal{
+  margin:0 auto;
+  width: 100%;
+  text-align: justify;
+  padding-left: 20%;
+}           
 .content-table{
-width: 80%;
+width: 100%;
 }
-.total-pagar{    border: none}
+.total-pagar h3{text-align: center;  font-weight: bold;}
+.total-pagar{    border-bottom: none;}
+.carrito-botones a:hover,
+.carrito-botones a:active,
+.carrito-botones a:visited{  color:white;
+  text-decoration: none;}
 
 /*
-@media screen and (min-width: 480px), (min-width: 320px) 
+@media screen and (min-width:320px) 
+
+{
+  .contenedor-carrito{
+  width: 80%;  
+  }
+  .content-table{
+    width: 80%;
+    }
+    table, thead, tbody, th, td, tr {
+			display: block;
+		}
+	
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+		td {
+		
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+            text-align: center;
+		}
+
+		td:before {
+	
+			position: absolute;
+	
+			top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+    .paypal{
+      margin:0 ;
+      align-items: center;
+      width: 45%;
+    }    
+  }
+
+/*
   {
 	    .contenedor-carrito{
         display:block;
         justify-content: stretch;
-        width: 300px;
+        width: 80%;
         margin: auto;
         left: 10px;
     }
@@ -90,6 +148,45 @@ width: 80%;
 			padding-right: 10px;
 			white-space: nowrap;
 		}
-
+  }
+  @media screen and (min-width:480px) 
+  {
+	    .contenedor-carrito{
+        display:block;
+        justify-content: stretch;
+        width: 80%;
+        margin: auto;
+        left: 10px;
     }
-*/
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+	
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+		td {
+		
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+            text-align: center;
+		}
+
+		td:before {
+			position: absolute;
+	  	top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+  }
+/*Estilos para tablet*/

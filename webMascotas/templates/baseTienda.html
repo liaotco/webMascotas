@@ -75,6 +75,7 @@
               <div class="mensaje_eliminar">
                 Producto eliminado con éxito!
               </div>
+            
             <table class="content-table"> 
               <thead> 
               <tr> 
@@ -107,33 +108,30 @@
                   </td>
                 {% endif %}
                 <tr>
-                  <td class="total-pagar" colspan="5">
+                  <td colspan="5" class="total-pagar" >
                     <h3>Total: {{total_carrito}} €</h3>
                   </td>			
                 </tr>
                 </tbody> 
             </table>
-            <h1><a href="{% url 'verCarrito' %}" class="modal_btn">Finalizar compra</a></h1>
+            <h3><a href="{% url 'verCarrito' %}" class="modal_btn ">Finalizar compra</a></h3>
             </div>
           
         
           <div class="modal_news">
             <h3 class="modal-title">Aquí puedes subscribirte para recibir nuestras novedades, déjanos tu nombre y email:</h3>
-            <form action="{% url 'insertarSubscripcion' %}" method="POST"> {% csrf_token %}   
+            <form action="{% url 'insertarSubscripcion' %} {% url 'enviarEmail' %}" method="POST"> {% csrf_token %}   
                <input type="nombre" name="nombre" class="modal_news__input" placeholder="Nombre">
                <input type="email" name="email" class="modal_news__input" placeholder="Email">
                <button class="modal_btn">¡¡¡ Subscribirme !!!</button>
+          
             </form>
           </div>
-          <div class="modal_login">
-            <form action="#" method="POST"> {% csrf_token %}   
-             
-            </form>
+          <div class="mensaje_subscripcion">
+            <h3 class="modal-title">Tu subscripción se ha realizado con éxito</h3>
           </div>
-       </div>
      </div>
     </div>
   </div>
-
 </body>
 </html>

@@ -53,61 +53,46 @@ class insertarSubscripcion(CreateView):
     success_url=reverse_lazy('inicio')
 
         # import the necessary components first
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-import json 
-
-def enviarEmail(request):
-    if request.method == 'POST':
-        var_nombre=request.POST['introducir_nombre']
-        var_email=request.POST['introducir_email']
-        var_mensaje=request.POST['introducir_mensaje']
-        
-        sender = 'rosalia.otero@gmail.com'
-        port = 25 
-        smtp_server = "smtp.gmail.com"
-        login = "rosalia.otero@gmail.com" 
-        password = "Bzt1zu1g_l"
-        sender_email = "rosalia.otero@gmail.com" 
-        receiver_email = var_email,sender_email
-        message = MIMEMultipart("")
-        message["Subject"] = "My Pet Shop: Confirmación solicitud información."
-        message["From"] = sender_email
-        message["To"] = receiver_email
-
-    # write the text/plain part
-        text = """\
-            Hola {{var_nombre}},
-            Hemos recibido tu solicitud de contacto con los siguientes datos:
-            - Nombre: {{var_nombre}}
-            - Email: {{var_email}}
-            - Mensaje: {{var_mensaje}}
-            En breve nos pondremos en contacto contigo. 
-            Muchas gracias, un saludo.
-        """
-    # write the HTML part
-        message.attach(MIMEText(message, 'plain'))
-
-        server = smtplib.SMTP('smtp.gmail.com: 587')
-        server.starttls()
-        server.login(message['From'], password)
-        server.sendmail(message['From'], message['To'], message.as_string())
-        server.quit()
-    return redirect('contacto')        
 
 
 """
-        html = 
-        <html>
-            <body>
-            <p>Hola {{var_nombre}},<br>
-            Hemos recibido tu solicitud de contacto con los siguientes datos: </p>
-            <p> - Nombre: {{var_nombre}}</p>
-            <p> - Email: {{var_email}}</p>
-            <p> - Mensaje: {{var_mensaje}}</p>
-            <p>     En breve nos pondremos en contacto contigo. 
-                                    Muchas gracias, un saludo.</p>
-            </body>
-        </html>
-    """
+contraseña gmal para python
+uksx djwg rzsp bjcx
+
+"""
+# import necessary packages 
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
+
+def enviarEmail(request):
+# create message object instance 
+    msg = MIMEMultipart()
+    sender="rosalia.otero@gmail.com"
+    password = "uksx djwg rzsp bjcx"
+    
+    if request.POST["email"]:
+        receiver=request.POST["email"]
+        message = "Gracias por tu subscripción"
+        subject="Subscription"
+# setup the parameters of the message 
+    else:
+        receiver=request.POST["introducir_email"]
+        message = "Gracias solicitud de contacto, en breve nos pondremos en contacto contigo."
+        subject="Solicitud de contacto"
+
+    msg['From'] = sender
+    msg['To'] = receiver
+    msg['Subject'] = subject
+# add in the message body 
+    msg.attach(MIMEText(message, 'plain'))
+#create server 
+    server = smtplib.SMTP('smtp.gmail.com: 587')
+    server.starttls()
+# Login Credentials for sending the mail 
+    server.login(msg['From'], password)
+    # send the message via the server. 
+    server.sendmail(msg['From'], msg['To'], msg.as_string())
+    server.quit()
+    return redirect('contacto')

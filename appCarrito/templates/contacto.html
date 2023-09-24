@@ -9,7 +9,8 @@
       Teléfono Fijo: <strong>982-164-574</strong><br>
       Movil: <strong>668453075</strong><br>
       Email: <strong>mypetshop@gmail.com</a></strong>	
-       <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+      <br><br>
+       <h4>Escríbenos y en breve los pondremos en contacto contigo</h4>
    <div class="formulario">
        <form action="{% url 'enviarEmail' %}" method="post">	{% csrf_token %}   	
          <p>
@@ -42,8 +43,17 @@
 </div>
  </section>    
 
-                          
-
-      
+ <div class="pop-up">
+   <div class="pop-up-wrap">
+     <div class="subcription">
+       <i class="far fa-times-circle" id="close"></i>
+       <div class="sub-content">
+         <div class="mensaje_contacto">
+            <h3 class="modal-title">Tu solicitud se ha regostradp con éxito</h3>
+          </div>
+       </div>                        
+     </div>
+   </div>     
+ </div>      
       
       {% endblock %}

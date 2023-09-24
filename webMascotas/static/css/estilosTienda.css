@@ -345,7 +345,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
-  z-index: -2;
+  
 }
 .product {
   border: 1px solid #ccc;
@@ -378,6 +378,7 @@ h1 {
 .product__price {
   color: #FF4E00;
   font-weight: bold;
+  font-size: x-large;
 }
 
 .product a, a:hover,a:visited,a:active{
@@ -391,8 +392,11 @@ text-decoration: none;
   margin: 0 auto;
   margin-top: 10px; 
 }
+.section__title{text-align: center; padding-bottom: 10px;}
+.testimonial__title{text-align: center;}
 .testimonial__txt{
   color: #212121;
+  font-size: larger;
 }
 .container-editor{
   margin-top: 20px;
@@ -494,7 +498,7 @@ text-decoration: none;
   border-radius: 16px; 
   text-align: center;
   border: 1px solid #333;
-  z-index: 0;
+  
  }
 
 .articles article a { 
@@ -614,38 +618,38 @@ text-decoration: none;
   border: none;
   cursor: pointer;
 }
-.pop-up{
-  background: rgba(48, 48, 48, 0.5);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*visibility: hidden;*/
-  display: none;
+
+  .pop-up{
+    background: rgba(48, 48, 48, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    
+  }
   
-}
 
-.pop-up-wrap{
-  display: flex;
-  align-items: center;
-  transform: scale(0.6);
-  opacity: 0;
-  width: 90%;
-  max-width: 950px;
-  transition: .3s ease all;
-  padding: 50px 50px;
-}
-.modal_carrito, .modal_news, .modal_login{
+  .pop-up-wrap{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 950px;
+    transform: scale(0.6);
+    opacity: 0;
+    transition: .3s ease all;
+    
+  }
+.modal_carrito, .modal_news, .modal_login, .mensaje_contacto{
   display: none;
 }
-.mensaje_añadir,.mensaje_eliminar{
+.mensaje_añadir,.mensaje_eliminar,.mensaje_subscripcion{
   display: none;
 }
-
 .subcription::before{
   content: '';
   position: absolute;
@@ -654,23 +658,22 @@ text-decoration: none;
   left: 0;
   right: 0;
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+  z-index: -1;
 
 }
 .subcription{
-background-color: #fff;
-  flex-basis: 0;
-  flex-grow: 2;
-  min-height: fit-content;
-  min-width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
-  text-align: center;
-  top:50%;
-
-}
+  background-color: #fff;
+    flex-basis: 0;
+    flex-grow: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-align: center;
+  
+  }
 .modal_news__input{width: auto;}
 .sub-content{
   width: 100%;
@@ -687,10 +690,8 @@ background-color: #fff;
 }
 
 .pop-up.show{
-  /*visibility: visible;*/
-  display: block;
+  visibility: visible;
 }
-
 .pop-up-wrap.show{
   transform: scale(1);
   opacity: 1;
@@ -702,7 +703,7 @@ background-color: #fff;
   transform: translate(-50%, -50%);
 }
 
-.mensaje_añadir.show, .mensaje_eliminar.show{
+.mensaje_añadir.show, .mensaje_eliminar.show,.mensaje_subscripcion.show {
   align-items: center;
   background-color: lightgreen;
   display: block;
@@ -711,12 +712,14 @@ background-color: #fff;
   padding: 5px;
   width: fit-content;
   border: #1bc59b 2px dotted;
-  z-index: 99999;
+  
 }
 
 .modal_carrito.show, 
 .modal_news.show,
-.modal_login.show {
+.modal_login.show,
+.mensaje_contacto.show
+ {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -726,10 +729,9 @@ background-color: #fff;
   width: 80%;
   padding-block-start: 50px;
   padding-block-end: 50px;
-
   top:500px;
 }
-
+.modal-title { text-align: center;}
 .modal-title::after{
   position: absolute;
   top: 0;
