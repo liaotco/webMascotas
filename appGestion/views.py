@@ -15,9 +15,28 @@ def cargaForm(request):
 # PRODUCTOS
 
 def mostrarProductos(request):
-     productos=Producto.objects.all()
-     return render(request,'productos.html',{'productos':productos})
+     listado=Producto.objects.all()
+     return render(request,'productos.html',{'productos':listado})
 
+def mostrarSubscripciones(request):
+     listado=Subscripcion.objects.all()
+     return render(request,'subscripciones.html',{'subscripciones':listado})
+
+def mostrarClientes(request):
+     listado=Cliente.objects.all()
+     return render(request,'clientes.html',{'clientes':listado})
+
+def mostrarDepartamentos(request):
+     listado=Departamento.objects.all()
+     return render(request,'departamentos.html',{'departamentos':listado})
+
+def mostrarEmpleados(request):
+     listado=Empleado.objects.all()
+     return render(request,'empleados.html',{'empleados':listado})
+
+def mostrarPedidos(request):
+     listado=Pedido.objects.all()
+     return render(request,'pedidos.html',{'pedidos':listado})
 
 def insertarProducto(request):
     if request.method == 'POST':

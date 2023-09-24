@@ -72,15 +72,11 @@ def enviarEmail(request):
     sender="rosalia.otero@gmail.com"
     password = "uksx djwg rzsp bjcx"
     
-    if request.POST["email"]:
-        receiver=request.POST["email"]
-        message = "Gracias por tu subscripción"
-        subject="Subscription"
-# setup the parameters of the message 
-    else:
-        receiver=request.POST["introducir_email"]
-        message = "Gracias solicitud de contacto, en breve nos pondremos en contacto contigo."
-        subject="Solicitud de contacto"
+  # setup the parameters of the message 
+    receiver=request.POST["introducir_email"]
+    nombre=request.POST["introducir_nombre"]
+    message = "Hola {{nombre}}. Gracias por tu solicitud de contacto, en breve nos pondremos en contacto contigo."
+    subject="Solicitud de contacto"
 
     msg['From'] = sender
     msg['To'] = receiver
@@ -95,4 +91,4 @@ def enviarEmail(request):
     # send the message via the server. 
     server.sendmail(msg['From'], msg['To'], msg.as_string())
     server.quit()
-    return redirect('contacto')
+   

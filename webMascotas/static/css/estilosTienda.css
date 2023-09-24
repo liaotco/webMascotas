@@ -35,14 +35,6 @@ img {
   font-size: 1.15em;
 }
 
-
-
-  @media screen and (min-width:320px) 
-{
-  .main-header__input {width:100px}
-}
-
-
 .main-header__link {
   color: #333;
   padding: 15px;
@@ -175,7 +167,7 @@ p{
   transition: all 0.5s;
   
 }
-.menu{
+.menu {
   position: absolute;
   top: 80px;
   left: 0;
@@ -202,12 +194,12 @@ p{
   color: #212121;
 }
 
-.mostrar{
+.mostrar { 
   opacity: 1;
   visibility: visible;
 }
 
-.icon-menu{
+.icon-menu {
   font-size: 1.5em;
   display: block;
   padding: 5px;

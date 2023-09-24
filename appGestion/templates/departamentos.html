@@ -1,0 +1,27 @@
+{% extends 'baseGestion.html' %}
+{% load static %}
+<title>{% block title %}Productos{% endblock %}</title>
+
+{% block content %}
+
+       <div class="listado-tabla">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <td>ID</td>
+                        <td>Nombre</td>
+                        <td>Localidad</td>
+                   </tr>
+                </thead>
+                <tbody>
+                    {% for c in departamentos %}
+                    <tr class="table-info">
+                        <td>{{c.dep_no}}</td>
+                        <td>{{c.nombre}}</td>
+                        <td>{{c.localidad}}</td>
+                    {% endfor%}
+                    </tr>
+                </tbody>
+            </table>
+        </div>      
+  {% endblock %}

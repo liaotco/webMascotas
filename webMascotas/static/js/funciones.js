@@ -5,7 +5,6 @@ btnMenu.addEventListener('click', function(){
   mainNav.classList.toggle('mostrar');
 });
 
-
 $(document).ready(function () {
   // POP up 
 function showPopupCar(){
