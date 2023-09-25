@@ -1,6 +1,6 @@
 {% extends 'baseGestion.html' %}
 {% load static %}
-<title>{% block title %}Productos{% endblock %}</title>
+<title>{% block title %}Clientes{% endblock %}</title>
 
 {% block content %}
 
@@ -27,6 +27,8 @@
                         <td>{{c.debe}}</td>
                         <td>{{c.haber}}</td>
                         <td>{{c.limite_credito}}</td>
+                        <td><a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a></td>
+                        <td><a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a></td>
                     {% endfor%}
                     </tr>
                 </tbody>

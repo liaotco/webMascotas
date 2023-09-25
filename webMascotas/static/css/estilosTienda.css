@@ -1,6 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Inconsolata);
-@font-face {  font-family: "Inconsolata";  src: url(../fonts/inconsolata.ttf);}
-@font-face {  font-family: "Poppins";  src: url(../fonts/Poppins-Bold.ttf);}
+
+/* latin */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(https://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32lw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 
 :root{   --resalte:color #FF4E00; }
 * {
@@ -10,24 +18,29 @@
   font-family: "Inconsolata";
 }
 /*#ff9b00, #48433c, #ebe9e7, #c2bdb6, #379bb5*/
-html{margin:0 auto;}
+html,
 body {
-  font-family: "Inconsolata";
-  overflow: scroll;
+font-family: "Inconsolata";
+width: 100%;
 }
 img {
   display: block;
   width: 100%;
 }
 .main-header {
-  padding: 0 20px;
+  padding: 0 10px;
+  width: 100%;
 }
 .main-header__title{
   text-align: center;
   font-size: 2.5em;
   margin: 10px 0;
   color: #454546;
-  font-family: "Poppins";
+  
+}
+.main-title{
+  padding-bottom: 5vh;
+ 
 }
 .main-header__container{
   display: flex;
@@ -52,6 +65,13 @@ img {
 }
 .nosotros{
   text-align: left;
+  font-size: xx-large;
+}
+.contacto{
+  margin-top: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: medium;
 }
 /*Estilos formulario contacto*/
 .contact_form{	
@@ -175,6 +195,7 @@ p{
   width: 100%;
   list-style: none;
   padding: 0px;
+  padding-right: 10px;
 }
 .menu__item {
   text-align: center;
@@ -187,6 +208,7 @@ p{
   text-decoration: none;
   position: relative;
   display: block;
+  font-size: 1.15em;
 
 }
 .menu__link:hover {
@@ -220,10 +242,10 @@ p{
 }
 .container{
 margin: 0 auto;
-margin-top: 15px;}
+}
 .main {
   margin: 0 auto;
-  margin-top: 15px;
+
 }
 .cantidadCarrito{
   background-color: #333;
@@ -245,7 +267,7 @@ h1 {
   -ms-transition: all 0.75s ease;
   -o-transition: all 0.75s ease;
   transition: all 0.75s ease;
-  height: 500px;
+  height: 450px;
   width: 300%;
 }
 #carrusel-contenido {
@@ -341,11 +363,12 @@ h1 {
 }
 .product {
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
-  position: relative;
-  
-
+  position: relative;  
+}
+.product__description{
+  margin:2vh;
 }
 .product:before {
   content: "New";
@@ -357,10 +380,11 @@ h1 {
   right: 10px;
   transform: rotate(-90deg);
   color: white;
+  z-index: 2;
 }
 
 .product__img{
-  width: 80%;
+  width: 100%;
   height: 120px;
   object-fit: cover;
 }
@@ -370,11 +394,12 @@ h1 {
 .product__price {
   color: #FF4E00;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 1.5em;
 }
 
-.product a, a:hover,a:visited,a:active{
+.product a, .product a:hover, .product a:visited, .product a:active{
 text-decoration: none;
+font-size: 1.25em;
 }
 
 .container__testimonials{
@@ -384,81 +409,26 @@ text-decoration: none;
   margin: 0 auto;
   margin-top: 10px; 
 }
-.section__title{text-align: center; padding-bottom: 10px;}
-.testimonial__title{text-align: center;}
+.section__title{
+  margin: 5px auto;
+  text-align: center; 
+  padding-bottom: 10px;
+  border-bottom: 3px dotted #333;
+  width: 20%;   
+}
+.testimonial__title{
+  text-align: center;
+  opacity: 0.8;
+  padding: 10px;
+}
 .testimonial__txt{
   color: #212121;
   font-size: larger;
 }
-.container-editor{
-  margin-top: 20px;
-}
 
-.editor__item{
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-}
-.editor__img  {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.editor__circle{
-  width: 200px;
-  height: 200px;
-  border: 2px solid white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: -200px;
-  right: -150px;
-  color: white;
-  padding: 20px;
-  padding-bottom: 70px;
-  padding-right: 50px;
-  font-size: 1.1em;
-  text-align: center;
-  font-weight: bold;
-  transition: all 0.5s;
-}
-.editor__item:hover .editor__circle{
-  transform: scale(1.2);
-  bottom: -90px;
-  right: -50px;
-}
-.editor__item:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  opacity: 0;
-  transition: all 0.5s;
-}
-.editor__item:hover:before {
-  opacity: 1;
-}
-.container-tips{
-  margin: 20px 0;
-  text-align: center;
-}
-.tip i{
-  font-size: 2em;
-  color: #333;
-  padding: 20px 0;
-}
-.tip .btn-shop {
-  color: #333;
-}
-.btn-shop:hover {
-  color: white;
-}
+
+
 
 /*Estilos tienda*/
 .centering {  
@@ -770,7 +740,7 @@ text-decoration: none;
   .main {
     padding: 0;
     margin:0 auto;
-    margin-top: 30px;
+   
   }
   .container{
     min-width: 100%;

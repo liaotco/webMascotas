@@ -5,12 +5,15 @@
 {% block content %}
           
 <section class="container__testimonials">
-      <h4>Datos de contacto</h4>
+      <h2>Datos de contacto</h2>
+      <p class="contacto">
       Teléfono Fijo: <strong>982-164-574</strong><br>
       Movil: <strong>668453075</strong><br>
       Email: <strong>mypetshop@gmail.com</a></strong>	
-      <br><br>
-       <h4>Escríbenos y en breve los pondremos en contacto contigo</h4>
+   <br>
+      <h4>Escríbenos y en breve los pondremos en contacto contigo</h4>
+      </p>
+      <br>
    <div class="formulario">
        <form action="{% url 'enviarEmail' %}" method="post">	{% csrf_token %}   	
          <p>

@@ -4,27 +4,27 @@
 
 {% block content %}
 
-       <div class="listado-tabla">
-            <table class="table">
-                <thead class="table-dark">
+       <div class="container-general">
+            <table class="content-table">
+                <thead>
                     <tr>
                         <td>Nº Producto</td>
                         <td>Imagen</td>
                         <td>Nombre</td>
                         <td>Precio</td>
-                        <td colspan="3">Operaciones</td>
+                        <td>Operaciones</td>
                     </tr>
                 </thead>
                 <tbody>
                     {% for c in productos %}
-                    <tr class="table-info">
+                    <tr>
                         <td>{{c.id}}</td>
                         <td>{{c.imagen}}</td>
                         <td>{{c.nombre}}</td>
                         <td>{{c.precio}}</td>
                         <td>
                              <a class="link_accion" href="javascript:ventanaSecundaria('../productoDetalle/{{c.id}}')"> + Info</a>
-                            </td>
+                        </td>
                         <td><a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a></td>
                         <td><a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a></td>
                     {% endfor%}

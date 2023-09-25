@@ -1,4 +1,9 @@
- table, th, td {
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+table, th, td {
     border-collapse: collapse;
   
   }
