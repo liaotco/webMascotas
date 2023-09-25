@@ -4,15 +4,16 @@
 
 {% block content %}
 
-       <div class="listado-tabla">
-            <table class="table">
-                <thead class="table-dark">
+<div class="container-tabla">
+    <table class="content-table">
+        <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Producto</td>
-                        <td>Cliente</td>
-                        <td>Unidades</td>
-                        <td>Fecha</td>
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Cliente</th>
+                        <th>Unidades</th>
+                        <th>Fecha</th>
+                        <th>Operaciones</th>
                    </tr>
                 </thead>
                 <tbody>
@@ -30,4 +31,24 @@
                 </tbody>
             </table>
         </div>      
+        <div class="table">
+            {% for c in subscripciones %}
+            <div class="item">
+              
+                <div class="row">
+                    <div class="thead">ID</div>
+                    <div class="tbody">{{c.id}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Nombre</div>
+                    <div class="tbody">{{c.nombre}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Email</div>
+                    <div class="tbody">{{c.email}}</div>
+                </div>
+             
+            </div>
+            {% endfor%}
+        </div>
   {% endblock %}

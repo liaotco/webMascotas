@@ -4,17 +4,18 @@
 
 {% block content %}
 
-       <div class="listado-tabla">
-            <table class="table">
-                <thead class="table-dark">
+<div class="container-tabla">
+    <table class="content-table">
+        <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Nombre</td>
-                        <td>Localidad</td>
-                        <td>V. Asignado</td>
-                        <td>Debe</td>
-                        <td>Haber</td>
-                        <td>Crédito</td>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Localidad</th>
+                        <th>V. Asignado</th>
+                        <th>Debe</th>
+                        <th>Haber</th>
+                        <th>Crédito</th>
+                        <th>Operaciones</th>
                    </tr>
                 </thead>
                 <tbody>
@@ -34,4 +35,39 @@
                 </tbody>
             </table>
         </div>      
+        <div class="table">
+            {% for c in clientes %}
+            <div class="item">
+              
+                <div class="row">
+                    <div class="thead">ID</div>
+                    <div class="tbody">{{c.id}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Nombre</div>
+                    <div class="tbody">{{c.nombre}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Localidad</div>
+                    <div class="tbody">{{c.localidad}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">V. Asignado</div>
+                    <div class="tbody">{{c.vendedor_no}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Debe</div>
+                    <div class="tbody">{{c.debe}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Haber</div>
+                    <div class="tbody">{{c.haber}}</div>
+                </div>          
+                <div class="row">
+                    <div class="thead">Limite Crédito</div>
+                    <div class="tbody">{{c.limite_credito}}</div>
+                </div>                  
+            </div>
+            {% endfor%}
+        </div>
   {% endblock %}

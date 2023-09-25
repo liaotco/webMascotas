@@ -4,24 +4,45 @@
 
 {% block content %}
 
-       <div class="listado-tabla">
-            <table class="table">
-                <thead class="table-dark">
-                    <tr>
-                        <td>ID</td>
-                        <td>Nombre</td>
-                        <td>Email</td>
-                   </tr>
-                </thead>
-                <tbody>
-                    {% for c in subscripciones %}
-                    <tr class="table-info">
-                        <td>{{c.id}}</td>
-                        <td>{{c.nombre}}</td>
-                        <td>{{c.email}}</td>
-                    {% endfor%}
-                    </tr>
-                </tbody>
-            </table>
-        </div>      
+<div class="container-tabla">
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% for c in subscripciones %}
+                <tr class="table-info">
+                    <td>{{c.id}}</td>
+                    <td>{{c.nombre}}</td>
+                    <td>{{c.email}}</td>
+            {% endfor%}
+            </tr>
+        </tbody>
+    </table>
+</div>      
+
+<div class="table">
+    {% for c in subscripciones %}
+    <div class="item">
+      
+        <div class="row">
+            <div class="thead">ID</div>
+            <div class="tbody">{{c.id}}</div>
+        </div>
+        <div class="row">
+            <div class="thead">Nombre</div>
+            <div class="tbody">{{c.nombre}}</div>
+        </div>
+        <div class="row">
+            <div class="thead">Email</div>
+            <div class="tbody">{{c.email}}</div>
+        </div>
+     
+    </div>
+    {% endfor%}
+</div>
   {% endblock %}

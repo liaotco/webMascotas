@@ -3,6 +3,8 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+/*BOTONES*/
 .container-botonera{  
   display: flex;
   width: fit-content;
@@ -27,15 +29,11 @@
 .contenedor,.listado-tabla{
 margin: 0 auto;
 overflow: hidden;
-margin-top: 15px;
-width: 90%;
+width: 100%;
 }
 
-/*Barra nav*/
-
-/*Acciones sobre DATOS*/
+/*FORMULARIOS*/
 a.link_accion {
-
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -44,8 +42,7 @@ a.link_accion {
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
-  }
-  
+  }  
 a.link_accion:focus {
   outline: none !important;
   } 
@@ -56,23 +53,6 @@ a.link_accion:hover {
       color: #fff;
       background-color: var(--fondosecundario);
   }
-
-  /* ----------------*/
-/*INDEX */    
-    .contenedor_index {
-        max-width: 100%;
-   }
-
-   .contenedor_general {
-    max-width: 100%;
-}
-
-/*COMUN FORMULARIOS*/
-.listado-tabla{
-    padding-top: 150px;  
-   text-align: center;
-}
-
 .contenido {
     width: 100%;
     min-height: 80vh;
@@ -279,3 +259,69 @@ button:hover {
     color: var(--fondosecundario);
 }
 
+
+/*TABLA*/
+.container-tabla{
+    width: 80%;
+    margin: 0 auto;
+
+}
+.container-tabla table,
+.container-tabla th, 
+.container-tabla td {
+    border-collapse: collapse;
+  padding: 1%;
+  text-align: center;
+  }
+
+.container-tabla th{
+    background-color: #333;
+    color: white;
+  }
+.container-tabla th,
+.container-tabla td{
+        border-bottom: 1px solid black;
+
+  }
+
+.container-tabla th  {
+    font-weight: 700;
+    font-size: 2vh; 
+    text-align: center;
+}
+.content-table{
+    width: 100%;
+    
+    }
+div.table {
+        display: none;
+    }
+    @media screen and (max-width: 700px) {
+ div.container-tabla{display: none;}
+        div.table {
+            display: block;
+            width: 100%;
+        }
+     
+        div.item {
+            margin-bottom: 10px;
+        }
+     
+        div.row {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row;
+        }
+     
+        div.tbody, div.thead {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: left;
+            width: 50%;
+        }
+     
+        div.thead {
+            background-color: #eee;
+        }
+    }

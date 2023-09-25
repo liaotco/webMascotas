@@ -4,15 +4,15 @@
 
 {% block content %}
 
-       <div class="container-general">
+       <div class="container-tabla">
             <table class="content-table">
                 <thead>
                     <tr>
-                        <td>Nº Producto</td>
-                        <td>Imagen</td>
-                        <td>Nombre</td>
-                        <td>Precio</td>
-                        <td>Operaciones</td>
+                        <th>Nº Producto</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th colspan="3">Operaciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,5 +34,25 @@
         </div>
         <div class="container-botonera">
             <a href="{% url 'cargaForm' %}" class="nav-menu-link nav-link" alt="Nuevo registro">Nuevo Producto</a>
+        </div>
+        <div class="table">
+            {% for c in subscripciones %}
+            <div class="item">
+              
+                <div class="row">
+                    <div class="thead">ID</div>
+                    <div class="tbody">{{c.id}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Nombre</div>
+                    <div class="tbody">{{c.nombre}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Email</div>
+                    <div class="tbody">{{c.email}}</div>
+                </div>
+             
+            </div>
+            {% endfor%}
         </div>
   {% endblock %}

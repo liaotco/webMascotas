@@ -4,19 +4,20 @@
 
 {% block content %}
 
-       <div class="listado-tabla">
-            <table class="table">
-                <thead class="table-dark">
+<div class="container-tabla">
+    <table class="content-table">
+        <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Apellido</td>
-                        <td>Oficio</td>
-                        <td>Director</td>
-                        <td>Fecha Alta</td>
-                        <td>Salario</td>
-                        <td>Comisión</td>
-                        <td>Nº Depto.</td>
-                        <td>Telefono</td>
+                        <th>ID</th>
+                        <th>Apellido</th>
+                        <th>Oficio</th>
+                        <th>Director</th>
+                        <th>Fecha Alta</th>
+                        <th>Salario</th>
+                        <th>Comisión</th>
+                        <th>Nº Depto.</th>
+                        <th>Telefono</th>
+                        <th>Operaciones</th>
                    </tr>
                 </thead>
                 <tbody>
@@ -38,4 +39,24 @@
                 </tbody>
             </table>
         </div>      
+        <div class="table">
+            {% for c in empleados %}
+            <div class="item">
+              
+                <div class="row">
+                    <div class="thead">ID</div>
+                    <div class="tbody">{{c.id}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Nombre</div>
+                    <div class="tbody">{{c.nombre}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Email</div>
+                    <div class="tbody">{{c.email}}</div>
+                </div>
+             
+            </div>
+            {% endfor%}
+        </div>
   {% endblock %}

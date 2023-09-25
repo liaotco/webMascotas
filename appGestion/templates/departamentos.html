@@ -4,13 +4,14 @@
 
 {% block content %}
 
-       <div class="listado-tabla">
-            <table class="table">
-                <thead class="table-dark">
+<div class="container-tabla">
+    <table class="content-table">
+        <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Nombre</td>
-                        <td>Localidad</td>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Localidad</th>
+                        <th>Operaciones</th>
                    </tr>
                 </thead>
                 <tbody>
@@ -26,4 +27,24 @@
                 </tbody>
             </table>
         </div>      
+        <div class="table">
+            {% for c in departamentos %}
+            <div class="item">
+              
+                <div class="row">
+                    <div class="thead">ID</div>
+                    <div class="tbody">{{c.id}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Nombre</div>
+                    <div class="tbody">{{c.nombre}}</div>
+                </div>
+                <div class="row">
+                    <div class="thead">Localidad</div>
+                    <div class="tbody">{{c.localidad}}</div>
+                </div>
+             
+            </div>
+            {% endfor%}
+        </div>
   {% endblock %}

@@ -9,14 +9,17 @@ table, th, td {
   }
 th,td{
         border-bottom: 1px solid black;
+
   }
 
  th  {
     color: #FF4E00;
     font-weight: 700;
-    font-size: 1.8vh; 
+    font-size: 2vh; 
     text-align: center;
 }
+
+
 .carrito-botones {
     justify-content: center;
     align-items: center;
