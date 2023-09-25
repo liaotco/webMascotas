@@ -58,7 +58,7 @@ img {
   overflow: hidden;
 	width: 100%; 
   height: auto;
-  margin: auto;
+  margin: 0 auto;
 	border-radius: 10px;  	
 	background-color: #fbfbfb; 
   padding:auto;
@@ -178,7 +178,7 @@ p{
 }
 .menu__item {
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
 }
 .menu__link {
   font-family: "Inconsolata";
@@ -696,16 +696,26 @@ text-decoration: none;
   transform: translate(-50%, -50%);
 }
 
-.mensaje_añadir.show, .mensaje_eliminar.show,.mensaje_subscripcion.show {
+.mensaje_añadir.show, .mensaje_subscripcion.show {
   align-items: center;
-  background-color: lightgreen;
+  background-color: #1bc59b;
   display: block;
   text-align: center;
   justify-content: center;
   padding: 5px;
   width: fit-content;
-  border: #1bc59b 2px dotted;
-  
+  border: lightseagreen 2px dotted;
+}
+.mensaje_eliminar.show
+{
+  align-items: center;
+  background-color: lightcoral;
+  display: block;
+  text-align: center;
+  justify-content: center;
+  padding: 5px;
+  width: fit-content;
+  border: 2px dotted crimson;
 }
 
 .modal_carrito.show, 
@@ -719,7 +729,7 @@ text-decoration: none;
   overflow: hidden;
   justify-content: space-around;
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   padding-block-start: 50px;
   padding-block-end: 50px;
   top:500px;
@@ -763,8 +773,8 @@ text-decoration: none;
     margin-top: 30px;
   }
   .container{
-    min-width: 320px;
-    margin: auto;
+    min-width: 100%;
+    margin: 0 auto;
   }
   .main-header__input{
      margin-top: 0;
@@ -784,8 +794,8 @@ text-decoration: none;
   }
   
   .container{
-    width: 320px;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto;
   }
   .contact_form{width: 50%;	}
   .input_form{width: 50%;}
@@ -794,20 +804,13 @@ text-decoration: none;
 /*Estilos para tablet*/
 @media screen and (min-width:768px) {
   .container{
-    width: 500px;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto;
   }
   .slider{
     height: 400px;
   }
-  .editor__item{
-    height: 250px;
-  }
-  .container-tips{
-    margin: 50px 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+
 }
 
 /*Estilos para web*/
@@ -815,7 +818,7 @@ text-decoration: none;
 @media screen and (min-width:1024px) { 
   .container{
     width: 1000px;
-    margin: auto;
+    margin: 0 auto;
   }
   .icon-menu {
     display: none;
@@ -843,7 +846,7 @@ text-decoration: none;
   .main-header__title {
     width: 100%;
     font-size: 4em;
-    margin: 0;
+    margin: 0 auto;
     border-bottom: 1px solid #ccc;
   }
   .main-header__link {

@@ -4,8 +4,7 @@
     <title>{% block title %}Mi carrito{% endblock %}</title>
 
 {% block content %}
-
-<div class="contenedor-carrito">	
+<section class="container__testimonials">
 	<div class="mensaje_añadir">
 		Producto añadido con éxito!
 	</div>
@@ -20,7 +19,8 @@
 		<th>Precio</th> 
 		<th>Subtotal</th> 
 		<th><a class="carrito-botones" href="{% url 'limpiar' %}" title="Borrar Carrito">
-			<i class="fa-solid fa-trash-can"></i></a></th>
+			<i class="fa-solid fa-trash-can"></i></a>
+		</th>
 	</tr> 
 	</thead> 
 	<tbody> 
@@ -48,9 +48,12 @@
 				<h3>Total: {{total_carrito}} €</h3>
 			</td>			
 		</tr>
-		<tr>
-			<td class="paypal" colspan="5" rowspan="5">		
-				<div id="paypal-button-container"></div>
+		
+	</tbody> 
+</table>
+<div class="centrado">
+	<div class="paypal">		
+		<div id="paypal-button-container"></div>
 					<script>
 						paypal.Buttons({
 							createOrder: function(data, actions) {
@@ -65,9 +68,9 @@
 							}).render('#paypal-button-container');
 					</script>
 				</div>
-			</td>
-		</tr>
-	</tbody> 
-</table>
+	</div>
 </div>
+
+  </section>  
+
 {% endblock %}

@@ -17,7 +17,6 @@ function showPopupNews(){
   $('.pop-up').addClass('show');
   $('.pop-up-wrap').addClass('show');
   $('.modal_news').addClass('show');
-     
 }
 function showPopupLogin(){
   $('.pop-up').addClass('show');

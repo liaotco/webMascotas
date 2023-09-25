@@ -40,8 +40,6 @@ def sacar_producto(request,prod_id):
     carrito.sacar(producto)
     return redirect('verCarrito')
 
-
-
 def limpiar_carrito(request):
     carrito=Carrito(request)
     carrito.limpiar()
@@ -52,11 +50,11 @@ class insertarSubscripcion(CreateView):
     fields=["nombre","email"]
     success_url=reverse_lazy('inicio')
 
-        # import the necessary components first
+# import the necessary components first
 
 
 """
-contraseña gmal para python
+contraseña gmail para python
 uksx djwg rzsp bjcx
 
 """
@@ -75,7 +73,8 @@ def enviarEmail(request):
   # setup the parameters of the message 
     receiver=request.POST["introducir_email"]
     nombre=request.POST["introducir_nombre"]
-    message = "Hola {{nombre}}. Gracias por tu solicitud de contacto, en breve nos pondremos en contacto contigo."
+    mensaje=request.POST["introducir_mensaje"]
+    message = f"Hola {nombre}. Gracias por tu solicitud de contacto, en breve nos pondremos en contacto contigo."
     subject="Solicitud de contacto"
 
     msg['From'] = sender
@@ -87,8 +86,9 @@ def enviarEmail(request):
     server = smtplib.SMTP('smtp.gmail.com: 587')
     server.starttls()
 # Login Credentials for sending the mail 
-    server.login(msg['From'], password)
+    server.login(sender, password)
     # send the message via the server. 
-    server.sendmail(msg['From'], msg['To'], msg.as_string())
+    server.sendmail(sender, receiver, msg.as_string())
     server.quit()
+    return redirect('contacto')
    

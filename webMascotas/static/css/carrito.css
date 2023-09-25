@@ -1,16 +1,16 @@
-.contenedor-carrito table, th, td {
+ table, th, td {
     border-collapse: collapse;
   
   }
-.contenedor-carrito th,td{
-      padding: 15px;
-      border-bottom: 1px solid black;
+th,td{
+        border-bottom: 1px solid black;
   }
 
-.contenedor-carrito th  {
+ th  {
     color: #FF4E00;
     font-weight: 700;
-    font-size: 20px; 
+    font-size: 1.8vh; 
+    text-align: center;
 }
 .carrito-botones {
     justify-content: center;
@@ -26,167 +26,27 @@
     font-size: 30px;
     text-align: justify;
 }
-
-.contenedor-carrito{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content:space-between;
-    padding: 30px;
-    position: relative;
-    background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    border-radius: 10px;
-    align-items: center;
-    padding:auto;
-    margin: 0 auto;
-    width: 100%;
+.centrado {
+  display: flex;
+  justify-content: center;
+ 
 }
 .paypal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin:0 auto;
-  width: 100%;
-  text-align: justify;
-  padding-left: 20%;
-}           
+  min-width: 50%;
+  text-align: center;
+ 
+ }    
 .content-table{
 width: 100%;
 }
 .total-pagar h3{text-align: center;  font-weight: bold;}
-.total-pagar{    border-bottom: none;}
+.total-pagar{border-bottom: none;}
 .carrito-botones a:hover,
 .carrito-botones a:active,
 .carrito-botones a:visited{  color:white;
   text-decoration: none;}
-
-/*
-@media screen and (min-width:320px) 
-
-{
-  .contenedor-carrito{
-  width: 80%;  
-  }
-  .content-table{
-    width: 80%;
-    }
-    table, thead, tbody, th, td, tr {
-			display: block;
-		}
-	
-		thead tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
-
-    tr {
-      margin: 0 0 1rem 0;
-    }
-      
-		td {
-		
-			border: none;
-			border-bottom: 1px solid #eee;
-			position: relative;
-            text-align: center;
-		}
-
-		td:before {
-	
-			position: absolute;
-	
-			top: 0;
-			left: 6px;
-			width: 45%;
-			padding-right: 10px;
-			white-space: nowrap;
-		}
-    .paypal{
-      margin:0 ;
-      align-items: center;
-      width: 45%;
-    }    
-  }
-
-/*
-  {
-	    .contenedor-carrito{
-        display:block;
-        justify-content: stretch;
-        width: 80%;
-        margin: auto;
-        left: 10px;
-    }
-		table, thead, tbody, th, td, tr {
-			display: block;
-		}
-	
-		thead tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
-
-    tr {
-      margin: 0 0 1rem 0;
-    }
-      
-		td {
-		
-			border: none;
-			border-bottom: 1px solid #eee;
-			position: relative;
-            text-align: center;
-		}
-
-		td:before {
-	
-			position: absolute;
-	
-			top: 0;
-			left: 6px;
-			width: 45%;
-			padding-right: 10px;
-			white-space: nowrap;
-		}
-  }
-  @media screen and (min-width:480px) 
-  {
-	    .contenedor-carrito{
-        display:block;
-        justify-content: stretch;
-        width: 80%;
-        margin: auto;
-        left: 10px;
-    }
-		table, thead, tbody, th, td, tr {
-			display: block;
-		}
-	
-		thead tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
-
-    tr {
-      margin: 0 0 1rem 0;
-    }
-      
-		td {
-		
-			border: none;
-			border-bottom: 1px solid #eee;
-			position: relative;
-            text-align: center;
-		}
-
-		td:before {
-			position: absolute;
-	  	top: 0;
-			left: 6px;
-			width: 45%;
-			padding-right: 10px;
-			white-space: nowrap;
-		}
-  }
-/*Estilos para tablet*/
