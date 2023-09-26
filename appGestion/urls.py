@@ -1,28 +1,31 @@
 from django.contrib import admin
 from django.urls import path
-from .views import webGestion,insertarProducto, eliminarProducto,editarProducto,mostrarProductos,ProductoDetailView,cargaForm
-from .views import mostrarSubscripciones,mostrarClientes,mostrarDepartamentos,mostrarEmpleados,mostrarPedidos
-"""
- 
-path('gestionTienda', webGestion,name='webGestion'),
+from .views import webGestion, editarProducto,ProductoDetailView,cargaForm, mostrar,insertar
 
-  
 """
-urlpatterns = [
-    path('', webGestion,name='webGestion'),
-    path('verProducto/',mostrarProductos, name='verProducto'),
+from .views import mostrarSubscripciones,mostrarClientes,mostrarDepartamentos,mostrarEmpleados,mostrarPedidos,insertarProducto,mostrarProductos,eliminarProducto
+
+path('gestionTienda', webGestion,name='webGestion'),
+    path('insertarProducto/',insertarProducto,name='insertarProducto'),  
+  
+        path('verProducto/',mostrarProductos, name='verProducto'),
     path('verSubscripcion/',mostrarSubscripciones, name='verSubscripcion'),
     path('verCliente/',mostrarClientes, name='verCliente'),
     path('verDepartamento/',mostrarDepartamentos, name='verDepartamento'),
     path('verEmpleado/',mostrarEmpleados, name='verEmpleado'),
     path('verPedido/',mostrarPedidos, name='verPedido'),
-     path('insertarProducto/',insertarProducto,name='insertarProducto'),
-    path('eliminarProducto/<int:prod_no>',eliminarProducto,name='eliminarProducto'),
+       path('eliminarProducto/<int:prod_no>',eliminarProducto,name='eliminarProducto'),
+"""
+urlpatterns = [
+    path('', webGestion,name='webGestion'),
+
+    path('eliminar/<str:opcion><int:index>',mostrar,name='mostrar'),  
     path('editarProducto/<int:prod_no>',editarProducto,name='editarProducto'),
-    path('cargaForm/', cargaForm,name='cargaForm'), 
+    path('cargaForm/<str:opcion>', cargaForm,name='cargaForm'), 
     path('productoDetalle/<pk>',ProductoDetailView.as_view(),name='productoDetalle'),
-   
-]
+    path('mostrar/<str:opcion>',mostrar,name='mostrar'),  
+    path('insertar/<str:opcion>',insertar,name='insertar')
+     ]
 
 
 

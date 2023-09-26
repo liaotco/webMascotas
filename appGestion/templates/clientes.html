@@ -11,7 +11,6 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Localidad</th>
-                        <th>V. Asignado</th>
                         <th>Debe</th>
                         <th>Haber</th>
                         <th>Crédito</th>
@@ -19,7 +18,7 @@
                    </tr>
                 </thead>
                 <tbody>
-                    {% for c in clientes %}
+                    {% for c in objeto %}
                     <tr class="table-info">
                         <td>{{c.id}}</td>
                         <td>{{c.nombre}}</td>
@@ -31,7 +30,7 @@
                             <a class="link_accion" href="javascript:ventanaSecundaria('../productoDetalle/{{c.id}}')"> + Info</a>
                         </td>
                         <td>
-                            <a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a>
+                            <a class="link_accion" href="{% url 'eliminar' 'clientes' c.id %}">Eliminar</a>
                         </td>
                         <td>
                             <a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a>

@@ -15,7 +15,7 @@
                    </tr>
                 </thead>
                 <tbody>
-                    {% for c in departamentos %}
+                    {% for c in objetos %}
                     <tr class="table-info">
                         <td>{{c.id}}</td>
                         <td>{{c.nombre}}</td>
@@ -24,7 +24,7 @@
                             <a class="link_accion" href="javascript:ventanaSecundaria('../productoDetalle/{{c.id}}')"> + Info</a>
                         </td>
                         <td>
-                            <a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a>
+                            <a class="link_accion" href="{% url 'eliminar' 'departamentos' c.id %}">Eliminar</a>
                         </td>
                         <td>
                             <a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a>
