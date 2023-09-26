@@ -3,22 +3,6 @@
   padding: 0px;
   box-sizing: border-box;
 }
-table, th, td {
-    border-collapse: collapse;
-  
-  }
-th,td{
-        border-bottom: 1px solid black;
-
-  }
-
- th  {
-    color: #FF4E00;
-    font-weight: 700;
-    font-size: 2vh; 
-    text-align: center;
-}
-
 
 .carrito-botones {
     justify-content: center;
@@ -58,3 +42,78 @@ width: 100%;
 .carrito-botones a:active,
 .carrito-botones a:visited{  color:white;
   text-decoration: none;}
+  
+
+  /*TABLA*/
+.container-carrito{
+  width: 80%;
+  margin: 0 auto;
+
+}
+.container-carrito table,
+.container-carrito th, 
+.container-carrito td {
+border-collapse: collapse;
+padding: 1%;
+text-align: center;
+border-bottom: 1px solid black;
+
+}
+
+.container-carrito th{
+  background-color: transparent;
+  color: #FF4E00;
+  font-weight: 700;
+font-size: 2vh; 
+text-align: center;
+}
+.container-carrito th,
+.container-carrito td{
+      border-bottom: 1px solid black;
+
+}
+
+.container-carrito th  {
+  font-weight: 700;
+  font-size: 2vh; 
+  text-align: center;
+}
+.content-table{
+  width: 100%;
+  
+  }
+div.table {
+      display: none;
+  }
+  @media screen and (max-width: 700px) {
+
+      div.container-carrito{display: none;}
+      div.table {
+          display: block;
+          width: 100%;
+       
+      }
+   
+      div.item {
+          margin-bottom: 10px;
+       
+      }
+   
+      div.row {
+          display: flex;
+          justify-content:center;
+          align-items: center;
+          flex-direction: row;
+          padding: 1%;
+          gap:3%;
+      }
+   
+      div.tbody {
+          border-bottom: 1px solid #ccc;
+          text-align: center;
+          width: 60%;
+          padding: 2%;
+      }
+   
+    
+  }

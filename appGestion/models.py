@@ -49,4 +49,3 @@ class Pedido(models.Model):
     cliente_no=models.ForeignKey(Cliente,on_delete=models.CASCADE)
     unidades=models.SmallIntegerField()
     fecha_pedido=models.DateField()
-

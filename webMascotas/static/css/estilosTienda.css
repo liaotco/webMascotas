@@ -616,14 +616,14 @@ margin-bottom: 5%;}
     justify-content: center;
     align-items: center;
     visibility: hidden;
-    
+    min-height: 100%;
   }
   
 
   .pop-up-wrap{
     display: flex;
     align-items: center;
-    width: 90%;
+    width: 90%;    
     max-width: 950px;
     transform: scale(0.6);
     opacity: 0;
@@ -651,18 +651,20 @@ margin-bottom: 5%;}
   background-color: #fff;
     flex-basis: 0;
     flex-grow: 2;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: relative;
     text-align: center;
+    
   
   }
 .modal_news__input{width: auto;}
 .sub-content{
   width: 100%;
+  margin: 0 auto;
   gap:50px;
 }
 
@@ -682,12 +684,9 @@ margin-bottom: 5%;}
   transform: scale(1);
   opacity: 1;
   display: block;
-  margin:0 auto;
+  margin: 0 auto;
   position: absolute;
-  left: 50%;
-  top: 50%;  
-  transform: translate(-50%, -50%);
-}
+ }
 
 .mensaje_añadir.show, .mensaje_subscripcion.show {
   align-items: center;
@@ -711,7 +710,7 @@ margin-bottom: 5%;}
   border: 2px dotted crimson;
 }
 
-.modal_carrito.show, 
+
 .modal_news.show,
 .modal_login.show,
 .mensaje_contacto.show
@@ -727,6 +726,17 @@ margin-bottom: 5%;}
   padding-block-end: 50px;
   top:500px;
 }
+
+.modal_carrito.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 90%;
+  padding-block-start: 50px;
+  padding-block-end: 50px;
+ }
 .modal-title { text-align: center;}
 .modal-title::after{
   position: absolute;
@@ -751,13 +761,14 @@ margin-bottom: 5%;}
 
 
 
-@media screen and (min-width: 320px){
-  .sub-content h2{
+@media screen and (max-width: 320px){
+  .sub-content h3{
     font-size: 30px;
 }
 .sub-content{
   display: block;
-  min-width: 304px;}
+  min-width: 302px;
+}
 
   .centering{margin: auto;}
   .main {
