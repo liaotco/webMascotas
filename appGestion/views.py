@@ -10,8 +10,8 @@ from django.views.generic import DetailView
 def webGestion(request):
     return render(request,'baseGestion.html')
 
-def cargaForm(request):
-    return render(request,'form_insertar.html')
+def cargaForm(request,opcion):
+    return render(request,'form_insertar.html',{'respuesta':opcion})
 # PRODUCTOS
 
 """
