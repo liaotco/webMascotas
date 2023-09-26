@@ -5,15 +5,21 @@
 }
 
 /*BOTONES*/
-.container-botonera{  
-  display: flex;
-  width: fit-content;
-  margin:0 10px 0 0;
-  text-align: center;
-  font-size: x-large;
-  margin: 10px 0;
-  color: white;
-  background-color: #454546;
+
+.container-botonera{
+    padding: 2%;
+    margin: 0 auto;
+}
+.container-botonera a{
+    background-color: #454546;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .container-botonera a:active,.container-botonera a:visited{
@@ -32,6 +38,76 @@ overflow: hidden;
 width: 100%;
 }
 
+
+/*TABLA*/
+.container-tabla{
+    width: 80%;
+    margin: 0 auto;
+
+}
+.container-tabla table,
+.container-tabla th, 
+.container-tabla td {
+    border-collapse: collapse;
+  padding: 1%;
+  text-align: center;
+  }
+
+.container-tabla th{
+    background-color:#454546;
+    color: white;
+
+    font-size: 3vh; 
+    text-align: center;
+  }
+.container-tabla th,
+.container-tabla td{
+        border-bottom: 1px solid #454546 ;
+
+  }
+
+
+.content-table{
+    width: 100%;
+    
+    }
+div.table {
+        display: none;
+    }
+    @media screen and (max-width: 700px) {
+ div.container-tabla{display: none;}
+        div.table {
+            display: block;
+            width: 100%;
+        }
+     
+        div.item {
+            margin-bottom: 10px;
+        }
+     
+        div.row {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row;
+        }
+        div.thead {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: left;
+        width: 40%;
+        }
+        div.tbody {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: left;
+            width: 60%;
+        }
+     
+        div.thead {
+            background-color: #eee;
+        }
+    }
 /*FORMULARIOS*/
 a.link_accion {
   font-size: 14px;
@@ -106,7 +182,7 @@ button:hover {
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    padding: 72px 150px 25px 150px;
+
  }
 .contact100-form {
     width: 100%;
@@ -259,73 +335,3 @@ button:hover {
     color: var(--fondosecundario);
 }
 
-
-/*TABLA*/
-.container-tabla{
-    width: 80%;
-    margin: 0 auto;
-
-}
-.container-tabla table,
-.container-tabla th, 
-.container-tabla td {
-    border-collapse: collapse;
-  padding: 1%;
-  text-align: center;
-  }
-
-.container-tabla th{
-    background-color:#454546;
-    color: white;
-
-    font-size: 3vh; 
-    text-align: center;
-  }
-.container-tabla th,
-.container-tabla td{
-        border-bottom: 1px solid #454546 ;
-
-  }
-
-
-.content-table{
-    width: 100%;
-    
-    }
-div.table {
-        display: none;
-    }
-    @media screen and (max-width: 700px) {
- div.container-tabla{display: none;}
-        div.table {
-            display: block;
-            width: 100%;
-        }
-     
-        div.item {
-            margin-bottom: 10px;
-        }
-     
-        div.row {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            flex-direction: row;
-        }
-        div.thead {
-        border: 1px solid #ccc;
-        padding: 5px;
-        text-align: left;
-        width: 40%;
-        }
-        div.tbody {
-            border: 1px solid #ccc;
-            padding: 5px;
-            text-align: left;
-            width: 60%;
-        }
-     
-        div.thead {
-            background-color: #eee;
-        }
-    }
