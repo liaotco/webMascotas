@@ -18,10 +18,11 @@
                     {% for c in departamentos %}
                     <tr class="table-info">
                         <td>{{c.dep_no}}</td>
-                        <td>{{c.nombre}}</td>
+                        <td>{{c.dnombre}}</td>
                         <td>{{c.localidad}}</td>
-                        <td><a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a></td>
-                        <td><a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a></td>
+                        <td><a class="link_accion" href="">Eliminar</a>
+                            <a class="link_accion" href="">Editar</a>
+                        </td>
                     {% endfor%}
                     </tr>
                 </tbody>
@@ -33,11 +34,11 @@
               
                 <div class="row">
                     <div class="thead">ID</div>
-                    <div class="tbody">{{c.id}}</div>
+                    <div class="tbody">{{c.dep_no}}</div>
                 </div>
                 <div class="row">
                     <div class="thead">Nombre</div>
-                    <div class="tbody">{{c.nombre}}</div>
+                    <div class="tbody">{{c.dnombre}}</div>
                 </div>
                 <div class="row">
                     <div class="thead">Localidad</div>

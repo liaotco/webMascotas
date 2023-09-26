@@ -11,6 +11,8 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Email</th>
+                <th>Operaciones</th>
+
             </tr>
         </thead>
         <tbody>
@@ -19,8 +21,9 @@
                     <td>{{c.id}}</td>
                     <td>{{c.nombre}}</td>
                     <td>{{c.email}}</td>
+                    <td><a class="link_accion" href="">Eliminar</a></td>
+                </tr>
             {% endfor%}
-            </tr>
         </tbody>
     </table>
 </div>      

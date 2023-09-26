@@ -38,6 +38,7 @@ def mostrarPedidos(request):
      listado=Pedido.objects.all()
      return render(request,'pedidos.html',{'pedidos':listado})
 
+
 def insertarProducto(request):
     if request.method == 'POST':
         var_id=request.POST['id']
@@ -50,6 +51,9 @@ def insertarProducto(request):
                                      precio=var_precio)
         return redirect('verProducto')
     return mostrarProductos(request)
+
+
+
 
 def eliminarProducto(request,prod_no):
     producto=Producto.objects.get(id=prod_no)

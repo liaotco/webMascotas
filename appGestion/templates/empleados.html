@@ -26,14 +26,16 @@
                         <td>{{c.emp_no}}</td>
                         <td>{{c.apellido}}</td>
                         <td>{{c.oficio}}</td>
-                        <td>{{c.director}}</td>
+                        <td>{{c.director.emp_no}}</td>
                         <td>{{c.fecha_alta}}</td>
                         <td>{{c.salario}}</td>
                         <td>{{c.comision}}</td>
-                        <td>{{c.dep_no}}</td>
+                        <td>{{c.dep_no.dnombre}}</td>
                         <td>{{c.telefono}}</td>
-                        <td><a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a></td>
-                        <td><a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a></td>
+                        <td>
+                        <a class="link_accion" href="">Eliminar</a>
+                        <a class="link_accion" href="">Editar</a>
+                    </td>
                     {% endfor%}
                     </tr>
                 </tbody>
@@ -45,11 +47,11 @@
               
                 <div class="row">
                     <div class="thead">ID</div>
-                    <div class="tbody">{{c.id}}</div>
+                    <div class="tbody">{{c.emp_no}}</div>
                 </div>
                 <div class="row">
                     <div class="thead">Nombre</div>
-                    <div class="tbody">{{c.nombre}}</div>
+                    <div class="tbody">{{c.apellido}}</div>
                 </div>
                 <div class="row">
                     <div class="thead">Email</div>

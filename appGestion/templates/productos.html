@@ -25,8 +25,10 @@
                         <td>
                              <a class="link_accion" href="javascript:ventanaSecundaria('../productoDetalle/{{c.id}}')"> + Info</a>
                         </td>
-                        <td><a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a></td>
-                        <td><a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a></td>
+                        <td>
+                            <a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a>
+                            <a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a>
+                        </td>
                     {% endfor%}
                     </tr>
                 </tbody>
@@ -36,7 +38,7 @@
             <a href="{% url 'cargaForm' %}" class="nav-menu-link nav-link" alt="Nuevo registro">Nuevo Producto</a>
         </div>
         <div class="table">
-            {% for c in subscripciones %}
+            {% for c in productos %}
             <div class="item">
               
                 <div class="row">
@@ -44,12 +46,16 @@
                     <div class="tbody">{{c.id}}</div>
                 </div>
                 <div class="row">
+                    <div class="thead">Imagen</div>
+                    <div class="tbody">{{c.imagen}}</div>
+                </div>
+                <div class="row">
                     <div class="thead">Nombre</div>
                     <div class="tbody">{{c.nombre}}</div>
                 </div>
                 <div class="row">
-                    <div class="thead">Email</div>
-                    <div class="tbody">{{c.email}}</div>
+                    <div class="thead">Precio</div>
+                    <div class="tbody">{{c.precio}}</div>
                 </div>
              
             </div>
