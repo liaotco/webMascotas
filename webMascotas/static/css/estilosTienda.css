@@ -377,10 +377,11 @@ h1 {
 
 /* ESTILOS DE PRODUCTOS */
 .container-products {
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
-  
+
 }
 .product {
   border: 1px solid #ccc;
@@ -398,7 +399,7 @@ h1 {
   width: 60px;
   position: absolute;
   top: 20px;
-  right: 10px;
+  right: -20px;
   transform: rotate(-90deg);
   color: white;
   z-index: 2;
@@ -427,25 +428,26 @@ font-size: 1.25em;
 .container__testimonials{
   text-align: center;
   background: #F7F7F7;
-  padding: 20px;
   margin: 0 auto;
   margin-top: 10px; 
 }
 .section__title{
-  margin: 5px auto;
-  text-align: center; 
-  padding-bottom: 10px;
-  border-bottom: 3px dotted #333;
-  width: 20%;   
+  margin: 0 auto;
+  padding-bottom: 30px;
+  text-align: center;
+  
 }
 .testimonial__title{
-  text-align: center;
-  opacity: 0.8;
-  padding: 10px;
+margin: 0 auto;
+text-align: center;
+opacity: 0.8;
+font-style: italic;
+
 }
 .testimonial__txt{
   color: #212121;
   font-size: larger;
+  font-style: italic;
 }
 /*Estilos tienda*/
 .centering {  
@@ -782,16 +784,18 @@ margin-bottom: 5%;}
     min-width: 100%;
     margin: 0 auto;
   }
-  .main-header__input{
-     margin-top: 0;
-    }
+
   .contact_form{width: 50%;	}
   .input_form{width: 50%;}
   .button_formulario{width: 50%;}
 .modal_btn h1{font-size: -1em;}
 .main-header__container{
-  margin-bottom: 10px;
+  margin-bottom: 15px;  
  }
+ .container-products {
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
  .logo{
   object-fit: cover;
   width: 20%;
@@ -815,7 +819,7 @@ margin-bottom: 5%;}
   .input_form{width: 50%;}
   .button_formulario{width: 50%;}
   .main-header__container{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
    }
    .logo{
     object-fit: cover;
@@ -833,14 +837,22 @@ margin-bottom: 5%;}
   .slider{
     height: 400px;
    }
-  .main-header__container{
-    margin-bottom: 10px;
-   }
+   .main-header__container{
+    flex-wrap: wrap;
+    align-content: space-around;
+    
+  }
+
   .logo{
     object-fit: cover;
     width: 30%;
     height: 30%;  
     margin: 0 auto;
+  }
+  .container-products {
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
   }
 }
 /*Estilos para web*/
@@ -912,6 +924,7 @@ margin-bottom: 5%;}
     color: white;
   }
   .container-products {
+
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
   }
@@ -921,12 +934,11 @@ margin-bottom: 5%;}
   .container__testimonials{
     font-size: 1.3em; 
   }
-  .container-editor{
-    display: flex;
-    justify-content: space-between;
-  }
-  .editor__item{
-    width: 48%;
+  .logo{
+    object-fit: cover;
+    width: 50%;
+    height: 50%;  
+    margin: 0 auto;
   }
 }
 
