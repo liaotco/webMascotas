@@ -21,10 +21,9 @@
                 <tbody>
                     {% for c in clientes %}
                     <tr class="table-info">
-                        <td>{{c.cliente_no}}</td>
+                        <td>{{c.id}}</td>
                         <td>{{c.nombre}}</td>
                         <td>{{c.localidad}}</td>
-                        <td>{{c.vendedor_no}}</td>
                         <td>{{c.debe}}</td>
                         <td>{{c.haber}}</td>
                         <td>{{c.limite_credito}}</td>
@@ -51,7 +50,7 @@
               
                 <div class="row">
                     <div class="thead">ID</div>
-                    <div class="tbody">{{c.cliente_no}}</div>
+                    <div class="tbody">{{c.id}}</div>
                 </div>
                 <div class="row">
                     <div class="thead">Nombre</div>
@@ -60,10 +59,6 @@
                 <div class="row">
                     <div class="thead">Localidad</div>
                     <div class="tbody">{{c.localidad}}</div>
-                </div>
-                <div class="row">
-                    <div class="thead">V. Asignado</div>
-                    <div class="tbody">{{c.vendedor_no}}</div>
                 </div>
                 <div class="row">
                     <div class="thead">Debe</div>
