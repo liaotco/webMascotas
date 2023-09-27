@@ -13,6 +13,7 @@ class Producto(models.Model):
 class Subscripcion(models.Model):
     nombre=models.CharField(max_length=50,blank=False,default=True)
     email = models.CharField(max_length=50,blank=False)
+    fecha_alta=models.DateField(auto_now=True)
     def __str__(self):
         return self.email
 
@@ -41,4 +42,4 @@ class Pedido(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cliente=models.ForeignKey(Cliente,on_delete=models.CASCADE)
     unidades=models.SmallIntegerField()
-    fecha_pedido=models.DateField()
+    fecha_pedido=models.DateField(auto_now=True)

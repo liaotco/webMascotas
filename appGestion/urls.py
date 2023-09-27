@@ -3,7 +3,7 @@ from django.urls import path
 from .views import webGestion, editarProducto,ProductoDetailView,cargaForm, mostrar,insertar
 
 """
-from .views import mostrarSubscripciones,mostrarClientes,mostrarDepartamentos,mostrarEmpleados,mostrarPedidos,insertarProducto,mostrarProductos,eliminarProducto
+from .views import mostrarSubscripciones,mostrarClientes,mostrarDepartamentos,mostrarEmpleados,mostrarPedidos,insertarProducto,mostrarProductos,eliminarProducto,insertar
 
 path('gestionTienda', webGestion,name='webGestion'),
     path('insertarProducto/',insertarProducto,name='insertarProducto'),  
@@ -15,6 +15,7 @@ path('gestionTienda', webGestion,name='webGestion'),
     path('verEmpleado/',mostrarEmpleados, name='verEmpleado'),
     path('verPedido/',mostrarPedidos, name='verPedido'),
        path('eliminarProducto/<int:prod_no>',eliminarProducto,name='eliminarProducto'),
+          
 """
 urlpatterns = [
     path('', webGestion,name='webGestion'),

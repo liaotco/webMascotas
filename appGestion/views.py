@@ -3,6 +3,7 @@ from django.db import models
 from django.shortcuts import render, redirect
 from .models import *
 from django.views.generic import DetailView
+from .forms import *
 
 
 # Create your views here.
@@ -10,8 +11,21 @@ from django.views.generic import DetailView
 def webGestion(request):
     return render(request,'baseGestion.html')
 
-def cargaForm(request,opcion):
-    return render(request,'form_insertar.html',{'respuesta':opcion})
+def cargaForm(request,opcion):  
+    match opcion:
+        case "productos": 
+            form=formProducto()            
+        case "clientes":
+            form=formCliente()
+        case "departamentos":
+            form=formDepartamento()
+        case "empleados":
+            form=formEmpleado()
+        case "pedidos":
+            form=formPedido()
+    url='form_'+opcion+'.html'
+    return render(request,url,{'formulario':form})
+            
 # PRODUCTOS
 
 """
@@ -49,8 +63,8 @@ def mostrar(request,opcion):
             listado=Pedido.objects.all()
         case "subscripciones":
             listado=Subscripcion.objects.all()
-    url=opcion+'.html'
-    return render(request,url,{'respuesta':listado})
+ 
+    return render(request,'tablasgeneral.html',{'respuesta':listado})
 
 def eliminar(request,opcion,index):
     match opcion:
@@ -70,27 +84,41 @@ def eliminar(request,opcion,index):
             objeto=Pedido.objects.get(id=index)
             objeto.delete()
         case "subscripciones":
-            objeto=Subscripcion.objects.all()
+            objeto=Subscripcion.objects.get(id=index)
             objeto.delete()
-    url=opcion+'.html'
-    return render(request,url,{'respuesta':objeto})
+    
+    return render(request,'tablasgeneral.html',{'respuesta':objeto})
 
 def insertar(request,opcion):
-    match opcion:
-        case "productos": 
-           
-        case "clientes":
-           
-        case "departamentos":
-            
-        case "empleados":
-            
-        case "pedidos":
-           
-        case "subscripciones":
-            
-    url=opcion+'.html'
-    return render(request,url,{'respuesta':objeto})
+    if request.method == 'POST':
+        match opcion:
+            case "productos": 
+                form = formProducto(request.POST)
+                if form.is_valid():
+                    form.save()
+                listado=Producto.objects.all()
+            case "clientes":
+                form = formCliente(request.POST)
+                if form.is_valid():
+                    form.save()
+                listado=Cliente.objects.all()
+            case "departamentos":
+                form = formDepartamento(request.POST)
+                if form.is_valid():
+                    form.save()
+                listado=Departamento.objects.all()
+            case "empleados":
+                form = formEmpleado(request.POST)
+                if form.is_valid():
+                    form.save()
+                listado=Empleado.objects.all()
+            case "pedidos":
+                form = formPedido(request.POST)
+                if form.is_valid():
+                    form.save()
+                listado=Pedido.objects.all()
+
+    return render(request,'tablasgeneral.html',{'respuesta':listado})
 
 def editarProducto(request,prod_no):
     producto=Producto.objects.get(id=prod_no)

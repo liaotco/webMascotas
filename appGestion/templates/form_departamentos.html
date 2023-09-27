@@ -1,0 +1,11 @@
+{% extends 'baseGestion.html' %}
+{% load static %}
+<title>{% block title %}Departamentos{% endblock %}</title>
+
+{% block content %}
+<form action="{% url 'insertar' 'departamentos' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Guardar" />
+</form>
+  {% endblock %}

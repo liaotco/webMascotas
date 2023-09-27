@@ -1,0 +1,12 @@
+{% extends 'baseGestion.html' %}
+{% load static %}
+<title>{% block title %}Productos{% endblock %}</title>
+
+{% block content %}
+<form action="{% url 'insertar' 'productos' %}" method="post">
+  {% csrf_token %}
+
+  {{ form.as_table }}
+  <input type="submit" value="Guardar" />
+</form>
+  {% endblock %}
