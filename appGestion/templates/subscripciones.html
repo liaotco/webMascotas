@@ -20,14 +20,16 @@
                   <td>{{c.id}}</td>
                   <td>{{c.nombre}}</td>
                   <td>{{c.email}}</td>
-                  <td><a class="link_accion" href="">Eliminar</a></td>
+                  <td>
+                    <a class="link_accion" href="{% url 'eliminarSubscripcion' c.id %}">Eliminar</a>
+                </td>
               </tr>
           {% endfor%}
       </tbody>
   </table>
 </div>      
 <div class="container-botonera">
-  <a href="{% url 'cargaForm' 'subscripciones' %}" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
+  <a href="#" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
 </div>
 <div class="table">
   {% for c in respuesta %}

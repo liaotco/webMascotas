@@ -1,9 +1,13 @@
 from typing import Any, Dict, Optional
+from django import http
 from django.db import models
+from django.forms.models import BaseModelForm
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import *
-from django.views.generic import DetailView,CreateView,UpdateView
+from django.views.generic import DetailView,CreateView
 from .forms import *
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -16,12 +20,6 @@ class ProductoInsertarView(CreateView):
     fields=["producto_no","descripcion","precio_actual","stock_disponible"]
     success_url=reverse_lazy('producto_base')
 
-class ProductoListarView(ListView):
-    model=Producto
-    template_name="ventasApp/formulario.html"
-    fields=["producto_no","descripcion","precio_actual","stock_disponible"]
-    def get_queryset(self):
-        return Producto.objects.all()
 
 class ProductoUpdateView(UpdateView):
     model=Producto
@@ -54,74 +52,68 @@ def mostrar(request,opcion):
     return render(request,url,{'respuesta':listado})
 
 
-class InsertarView(CreateView):
-    template_name='formulario.html'
+class insertarProducto(CreateView):
+        model = Producto
+        fields =['nombre','precio','imagen']
+        template_name='formulario.html'   
+        success_url=reverse_lazy('mostrar' 'productos')   
+      
+
+class insertarCliente(CreateView):
+        model = Cliente
+        fields = ['nombre','localidad','debe','haber','limite_credito']
+        template_name='formulario.html'
+        success_url=reverse_lazy('mostrar' 'clientes') 
+  
+
+class insertarEmpleado(CreateView):
+        model = Empleado
+        fields = ['apellido','oficio','fecha_alta','salario','comision','telefono','dep']
+        template_name='formulario.html'
+        success_url=reverse_lazy('mostrar''empleados') 
+
+class insertarDepartamento(CreateView):
+        model = Departamento
+        fields = ['nombre','localidad']
+        template_name='formulario.html'
+        success_url=reverse_lazy('mostrar''departamentos') 
+
+class insertarPedido(CreateView):
+        model = Pedido
+        fields = ['producto','cliente','unidades']
+        template_name='formulario.html'
+        success_url=reverse_lazy('mostrar''pedidos') 
+
+def eliminarProducto(request,index):
+    objeto=Producto.objects.get(id=index)
+    objeto.delete()    
+    return redirect('mostrar' 'productos')
+
+def eliminarCliente(request,index):
+    objeto=Cliente.objects.get(id=index)
+    objeto.delete()
+    return redirect('mostrar' 'clientes')
+
+def eliminarSubscripcion(request,index):
+    objeto=Subscripcion.objects.get(id=index)
+    objeto.delete()
+    return redirect('mostrar' 'subscripciones')
+
+def eliminarEmpleado(request,index):
+    objeto=Empleado.objects.get(id=index)
+    objeto.delete()
+    return redirect('mostrar' 'empleados')
+
+def eliminarDepartamento(request,index):
+    objeto=Departamento.objects.get(id=index)
+    objeto.delete()
+    return redirect('mostrar' 'departamentos')
+
+def eliminarPedido(request,index):
+    objeto=Pedido.objects.get(id=index)
+    objeto.delete()
+    return redirect('mostrar' 'pedidos')
     
-
- 
-"""
-def insertar(request,opcion):
-    if request.method == 'POST':
-        match opcion:
-            case "productos": 
-                form = formProducto(request.POST)
-                if form.is_valid():
-                    form.save()
-                listado=Producto.objects.all()
-            case "clientes":
-                form = formCliente(request.POST)
-                if form.is_valid():
-                    form.save()
-                listado=Cliente.objects.all()
-            case "departamentos":
-                form = formDepartamento(request.POST)
-                if form.is_valid():
-                    form.save()
-                listado=Departamento.objects.all()
-            case "empleados":
-                form = formEmpleado(request.POST)
-                if form.is_valid():
-                    form.save()
-                listado=Empleado.objects.all()
-            case "pedidos":
-                form = formPedido(request.POST)
-                if form.is_valid():
-                    form.save()
-                listado=Pedido.objects.all()
-
-        url=opcion+'.html'
-        return render(request,url,{'respuesta':listado})
-
-"""
-def eliminar(request,opcion,index):
-    match opcion:
-        case "productos": 
-            objeto=Producto.objects.get(id=index)
-            objeto.delete()
-            listado=Producto.objects.all()
-        case "clientes":
-            objeto=Cliente.objects.get(id=index)
-            objeto.delete()
-            listado=Cliente.objects.all()
-        case "departamentos":
-            objeto=Departamento.objects.get(id=index)
-            objeto.delete()
-            listado=Departamento.objects.all()
-        case "empleados":
-            objeto=Empleado.objects.get(id=index)
-            objeto.delete()
-            listado=Empleado.objects.all()
-        case "pedidos":
-            objeto=Pedido.objects.get(id=index)
-            objeto.delete()
-            listado=Pedido.objects.all()
-        case "subscripciones":
-            objeto=Subscripcion.objects.get(id=index)
-            objeto.delete()
-            listado=Subscripcion.objects.all()
-    
-    url=opcion+'.html'
-    return render(request,url,{'respuesta':listado})
 
 def editarProducto(request,prod_no):
     producto=Producto.objects.get(id=prod_no)

@@ -27,7 +27,7 @@
                           <a class="link_accion" href="javascript:ventanaSecundaria('../productoDetalle/{{c.id}}')"> + Info</a>
                       </td>
                       <td>
-                          <a class="link_accion" href="#">Eliminar</a>
+                        <a class="link_accion" href="{% url 'eliminarPedido' c.id %}">Eliminar</a>
                       </td>
                       <td>
                           <a class="link_accion" href="">Editar</a>
@@ -38,7 +38,7 @@
           </table>
       </div>      
       <div class="container-botonera">
-          <a href="{% url 'cargaForm' 'pedidos' %}" class="nav-menu-link nav-link" alt="Nuevo registro">Añadir registro</a>
+          <a href="{% url 'insertarPedido' %}" class="nav-menu-link nav-link" alt="Nuevo registro">Añadir registro</a>
           <a href="#" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
       </div>
       <div class="table">

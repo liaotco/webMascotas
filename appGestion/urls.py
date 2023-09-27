@@ -1,31 +1,24 @@
 from django.contrib import admin
 from django.urls import path
-from .views import webGestion, editarProducto,ProductoDetailView,cargaForm, mostrar,InsertarView
+from .views import *
 
-"""
-from .views import mostrarSubscripciones,mostrarClientes,mostrarDepartamentos,mostrarEmpleados,mostrarPedidos,insertarProducto,mostrarProductos,eliminarProducto,insertar
-
-path('gestionTienda', webGestion,name='webGestion'),
-    path('insertarProducto/',insertarProducto,name='insertarProducto'),  
-  
-        path('verProducto/',mostrarProductos, name='verProducto'),
-    path('verSubscripcion/',mostrarSubscripciones, name='verSubscripcion'),
-    path('verCliente/',mostrarClientes, name='verCliente'),
-    path('verDepartamento/',mostrarDepartamentos, name='verDepartamento'),
-    path('verEmpleado/',mostrarEmpleados, name='verEmpleado'),
-    path('verPedido/',mostrarPedidos, name='verPedido'),
-       path('eliminarProducto/<int:prod_no>',eliminarProducto,name='eliminarProducto'),
-          
-"""
 urlpatterns = [
-    path('', webGestion,name='webGestion'),
-
-    path('eliminar/<str:opcion><int:index>',mostrar,name='mostrar'),  
+    path('', webGestion,name='webGestion'),  
     path('editarProducto/<int:prod_no>',editarProducto,name='editarProducto'),
-    path('cargaForm/<str:opcion>', cargaForm,name='cargaForm'), 
     path('productoDetalle/<pk>',ProductoDetailView.as_view(),name='productoDetalle'),
     path('mostrar/<str:opcion>',mostrar,name='mostrar'),  
-    path("insertarView",InsertarView.as_view(),name='insertar')
+    path('insertarProducto',insertarProducto.as_view(),name='insertarProducto'),
+    path('insertarCliente',insertarCliente.as_view(),name='insertarCliente'),
+    path('insertarEmpleado',insertarEmpleado.as_view(),name='insertarEmpleado'),
+    path('insertarDepartamento',insertarDepartamento.as_view(),name='insertarDepartamento'),
+    path('insertarPedido',insertarPedido.as_view(),name='insertarPedido'),
+    path('eliminarProducto/<int:index>',eliminarProducto,name='eliminarProducto'),  
+    path('eliminarCliente/<int:index>',eliminarCliente,name='eliminarCliente'),  
+    path('eliminarSubscripcion/<int:index>',eliminarSubscripcion,name='eliminarSubscripcion'),  
+    path('eliminarEmpleado/<int:index>',eliminarEmpleado,name='eliminarEmpleado'),  
+    path('eliminarDepartamento/<int:index>',eliminarDepartamento,name='eliminarDepartamento'),  
+    path('eliminarPedido/<int:index>',eliminarPedido,name='eliminarPedido'),  
+
      ]
 
 
