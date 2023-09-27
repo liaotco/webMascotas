@@ -53,23 +53,10 @@ def mostrar(request,opcion):
     url=opcion+'.html'
     return render(request,url,{'respuesta':listado})
 
-def cargaForm(request,opcion):  
-    match opcion:
-        case "productos": 
-            form=formProducto()            
-        case "clientes":
-            form=formCliente()
-        case "departamentos":
-            form=formDepartamento()
-        case "empleados":
-            form=formEmpleado()
-        case "pedidos":
-            form=formPedido()
-    template='formulario.html'
-    return render(request,template,{'formulario':form})
 
 class InsertarView(CreateView):
-
+    template_name='formulario.html'
+    
 
  
 """
