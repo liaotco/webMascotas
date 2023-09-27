@@ -53,6 +53,7 @@ $("#close").click(function(){
     $('.mensaje_contacto').removeClass('show');
 });
 
+/* Modales tienda y mensajes de gestion carrito*/
 $(".btn-abrir").click(showPopupCar);
 $(".btn-news").click(showPopupNews);
 $(".btn-login").click(showPopupLogin);

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import webGestion, editarProducto,ProductoDetailView,cargaForm, mostrar,insertar
+from .views import webGestion, editarProducto,ProductoDetailView,cargaForm, mostrar,InsertarView
 
 """
 from .views import mostrarSubscripciones,mostrarClientes,mostrarDepartamentos,mostrarEmpleados,mostrarPedidos,insertarProducto,mostrarProductos,eliminarProducto,insertar
@@ -25,7 +25,7 @@ urlpatterns = [
     path('cargaForm/<str:opcion>', cargaForm,name='cargaForm'), 
     path('productoDetalle/<pk>',ProductoDetailView.as_view(),name='productoDetalle'),
     path('mostrar/<str:opcion>',mostrar,name='mostrar'),  
-    path('insertar/<str:opcion>',insertar,name='insertar')
+    path("insertarView",InsertarView.as_view(),name='insertar')
      ]
 
 

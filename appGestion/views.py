@@ -2,53 +2,39 @@ from typing import Any, Dict, Optional
 from django.db import models
 from django.shortcuts import render, redirect
 from .models import *
-from django.views.generic import DetailView
+from django.views.generic import DetailView,CreateView,UpdateView
 from .forms import *
 
 
 # Create your views here.
 
+
+
+"""
+class ProductoInsertarView(CreateView):
+    model=Producto
+    fields=["producto_no","descripcion","precio_actual","stock_disponible"]
+    success_url=reverse_lazy('producto_base')
+
+class ProductoListarView(ListView):
+    model=Producto
+    template_name="ventasApp/formulario.html"
+    fields=["producto_no","descripcion","precio_actual","stock_disponible"]
+    def get_queryset(self):
+        return Producto.objects.all()
+
+class ProductoUpdateView(UpdateView):
+    model=Producto
+    template_name="ventasApp/formulario.html"
+    fields=["precio_actual","stock_disponible"]
+    success_url=reverse_lazy('producto_base')
+
+"""
+
 def webGestion(request):
     return render(request,'baseGestion.html')
 
-def cargaForm(request,opcion):  
-    match opcion:
-        case "productos": 
-            form=formProducto()            
-        case "clientes":
-            form=formCliente()
-        case "departamentos":
-            form=formDepartamento()
-        case "empleados":
-            form=formEmpleado()
-        case "pedidos":
-            form=formPedido()
-    url='form_'+opcion+'.html'
-    return render(request,url,{'formulario':form})
-            
-# PRODUCTOS
-
-"""
-def insertarProducto(request):
-    if request.method == 'POST':
-        var_id=request.POST['id']
-        var_imagen=request.POST['imagen']
-        var_nombre=request.POST['nombre']
-        var_precio=request.POST['precio']
-        producto=Producto.objects.create(id=var_id,
-                                     imagen=var_imagen,
-                                     nombre=var_nombre,
-                                     precio=var_precio)
-        return redirect('verProducto')
-    return mostrarProductos(request)
-
-    def eliminarProducto(request,prod_no):
-    producto=Producto.objects.get(id=prod_no)
-    producto.delete()    
-    return redirect('verProducto')
-
-    
-"""
+         
 def mostrar(request,opcion):
     match opcion:
         case "productos": 
@@ -64,31 +50,29 @@ def mostrar(request,opcion):
         case "subscripciones":
             listado=Subscripcion.objects.all()
  
-    return render(request,'tablasgeneral.html',{'respuesta':listado})
+    url=opcion+'.html'
+    return render(request,url,{'respuesta':listado})
 
-def eliminar(request,opcion,index):
+def cargaForm(request,opcion):  
     match opcion:
         case "productos": 
-            objeto=Producto.objects.get(id=index)
-            objeto.delete()
+            form=formProducto()            
         case "clientes":
-            objeto=Cliente.objects.get(id=index)
-            objeto.delete()
+            form=formCliente()
         case "departamentos":
-            objeto=Departamento.objects.get(id=index)
-            objeto.delete()
+            form=formDepartamento()
         case "empleados":
-            objeto=Empleado.objects.get(id=index)
-            objeto.delete()
+            form=formEmpleado()
         case "pedidos":
-            objeto=Pedido.objects.get(id=index)
-            objeto.delete()
-        case "subscripciones":
-            objeto=Subscripcion.objects.get(id=index)
-            objeto.delete()
-    
-    return render(request,'tablasgeneral.html',{'respuesta':objeto})
+            form=formPedido()
+    template='formulario.html'
+    return render(request,template,{'formulario':form})
 
+class InsertarView(CreateView):
+
+
+ 
+"""
 def insertar(request,opcion):
     if request.method == 'POST':
         match opcion:
@@ -118,7 +102,39 @@ def insertar(request,opcion):
                     form.save()
                 listado=Pedido.objects.all()
 
-    return render(request,'tablasgeneral.html',{'respuesta':listado})
+        url=opcion+'.html'
+        return render(request,url,{'respuesta':listado})
+
+"""
+def eliminar(request,opcion,index):
+    match opcion:
+        case "productos": 
+            objeto=Producto.objects.get(id=index)
+            objeto.delete()
+            listado=Producto.objects.all()
+        case "clientes":
+            objeto=Cliente.objects.get(id=index)
+            objeto.delete()
+            listado=Cliente.objects.all()
+        case "departamentos":
+            objeto=Departamento.objects.get(id=index)
+            objeto.delete()
+            listado=Departamento.objects.all()
+        case "empleados":
+            objeto=Empleado.objects.get(id=index)
+            objeto.delete()
+            listado=Empleado.objects.all()
+        case "pedidos":
+            objeto=Pedido.objects.get(id=index)
+            objeto.delete()
+            listado=Pedido.objects.all()
+        case "subscripciones":
+            objeto=Subscripcion.objects.get(id=index)
+            objeto.delete()
+            listado=Subscripcion.objects.all()
+    
+    url=opcion+'.html'
+    return render(request,url,{'respuesta':listado})
 
 def editarProducto(request,prod_no):
     producto=Producto.objects.get(id=prod_no)

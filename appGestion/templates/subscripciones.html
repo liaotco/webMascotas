@@ -1,0 +1,52 @@
+{% extends 'baseGestion.html' %}
+{% load static %}
+<title>{% block title %}Productos{% endblock %}</title>
+
+{% block content %}
+<div class="container-tabla">
+  <table class="content-table">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Operaciones</th>
+
+          </tr>
+      </thead>
+      <tbody>
+          {% for c in respuesta %}
+              <tr class="table-info">
+                  <td>{{c.id}}</td>
+                  <td>{{c.nombre}}</td>
+                  <td>{{c.email}}</td>
+                  <td><a class="link_accion" href="">Eliminar</a></td>
+              </tr>
+          {% endfor%}
+      </tbody>
+  </table>
+</div>      
+<div class="container-botonera">
+  <a href="{% url 'cargaForm' 'subscripciones' %}" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
+</div>
+<div class="table">
+  {% for c in respuesta %}
+  <div class="item">
+    
+      <div class="row">
+          <div class="thead">ID</div>
+          <div class="tbody">{{c.id}}</div>
+      </div>
+      <div class="row">
+          <div class="thead">Nombre</div>
+          <div class="tbody">{{c.nombre}}</div>
+      </div>
+      <div class="row">
+          <div class="thead">Email</div>
+          <div class="tbody">{{c.email}}</div>
+      </div>
+   
+  </div>
+  {% endfor%}
+</div>
+  {% endblock %}
