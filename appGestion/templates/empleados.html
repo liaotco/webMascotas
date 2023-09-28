@@ -30,10 +30,10 @@
                           <a class="link_accion btn-empleados" href="javascript:ventanaSecundaria('../empleadoDetalle/{{c.id}}')"> + Info</a>
                       </td>
                       <td>
-                        <a class="link_accion" href="{% url 'eliminarDepartamento' c.id %}">Eliminar</a>
+                        <a class="link_accion" href="{% url 'eliminaEmpleado' c.id %}">Eliminar</a>
                       </td>
                       <td>
-                          <a class="link_accion" href="{% url 'editarDepartamento' c.id %}">Editar</a>
+                          <a class="link_accion" href="{% url 'editarEmpleado' c.id %}">Editar</a>
                       </td>
                   {% endfor%}
                   </tr>
