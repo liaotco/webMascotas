@@ -29,7 +29,7 @@
                   <a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a>
               </td>
               <td>
-                  <a class="link_accion" href="">Editar</a>
+                  <a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a>
               </td>
           {% endfor%}
           </tr>

@@ -2,9 +2,13 @@
 {% load static %}
 <title>{% block title %}Insertar {{opcion}}{% endblock %}</title>
 {% block content %}
+
+<div class="formulario">
 <form method="POST">
+  
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Guardar">
+    {{ form.as_div }}
+    <input type="submit" value="Guardar" class="btn-guardar">
 </form>
+</div>
   {% endblock %}
