@@ -3,7 +3,7 @@ from .models import *
 from django.views.generic import DetailView,CreateView,UpdateView
 from .forms import *
 from django.urls import reverse_lazy
-
+from django.contrib.auth.decorators import login_required
 
 # VIEWS MOSTRAR DATOS
 def webGestion(request):

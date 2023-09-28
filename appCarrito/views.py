@@ -3,6 +3,7 @@ from appGestion.models import *
 from appCarrito.carrito import Carrito
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def inicio(request):
