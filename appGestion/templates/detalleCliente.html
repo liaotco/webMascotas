@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Detalles</title>
+    <link href="{% static 'css/estilosGestion.css' %}"rel="stylesheet" type="text/css">
+    <script src="{% static 'js/funciones.js' %}"></script>
+</head>
+<body>
+
+<div class="detallesCliente">
+    <div class="container-detalle">
+        <table class="content-detalle">
+        <thead>
+            <tr>
+                <td>Nº Pedido</td>
+                <td>Nº Producto</td>
+                <td>Unidades</td>
+                <td>Fecha</td>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td>{{object.id}}</td>
+                    <td>{{object.producto.nombre}}</td>
+                    <td>{{object.unidades}}</td>
+                    <td>{{object.fecha_pedido}}</td>  
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+  
+</body>
+</html>

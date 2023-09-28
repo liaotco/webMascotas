@@ -66,11 +66,9 @@ $(".button_formulario").click(showPopupContacto);
 
 
 
-
-
 /*VENTANA EMERGENTE PARA DETALLE*/
 function ventanaSecundaria (URL){
-  window.open(URL,"Detalle Producto","width=520,height=300,scrollbars=NO")
+  window.open(URL,"Detalle","width=520,height=300,scrollbars=NO")
 }
 
 

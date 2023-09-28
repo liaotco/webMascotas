@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'appGestion',
     'webMascotas',
     'email.mime',
-    'openpyxl',
+    'django_excel',
 ]
 
 MIDDLEWARE = [

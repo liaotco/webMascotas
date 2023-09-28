@@ -29,7 +29,7 @@
   </table>
 </div>      
 <div class="container-botonera">
-  <a href="#" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
+    <a href="{% url 'guardarArchivo' 'subscripciones' %}" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
 </div>
 <div class="table">
   {% for c in respuesta %}

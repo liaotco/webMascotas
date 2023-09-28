@@ -27,10 +27,10 @@
                       <td>{{c.dep_id}}</td>
                       
                       <td>
-                          <a class="link_accion btn-empleados" href="javascript:ventanaSecundaria('../empleadoDetalle/{{c.id}}')"> + Info</a>
+                          <a class="link_accion" href="javascript:ventanaSecundaria('../empleadoDetalle/{{c.id}}')"> + Info</a>
                       </td>
                       <td>
-                        <a class="link_accion" href="{% url 'eliminaEmpleado' c.id %}">Eliminar</a>
+                        <a class="link_accion" href="{% url 'eliminarEmpleado' c.id %}">Eliminar</a>
                       </td>
                       <td>
                           <a class="link_accion" href="{% url 'editarEmpleado' c.id %}">Editar</a>
@@ -42,7 +42,7 @@
       </div>   
       <div class="container-botonera">
           <a href="{% url 'insertarEmpleado' %}" class="nav-menu-link nav-link" alt="Nuevo registro">Añadir registro</a>
-          <a href="#" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
+          <a href="{% url 'guardarArchivo' 'empleados' %}" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
       </div> 
       <div class="table">
           {% for c in respuesta %}

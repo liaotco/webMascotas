@@ -21,8 +21,8 @@
                       <td>{{c.id}}</td>
                       <td>{{c.unidades}}</td>
                       <td>{{c.fecha_pedido}}</td>
-                      <td>{{c.cliente_id}}</td>
-                      <td>{{c.producto_id}}</td>                                      
+                      <td>{{c.cliente.nombre}}</td>
+                      <td>{{c.producto.nombre}}</td>                                      
                       <td>
                         <a class="link_accion" href="{% url 'eliminarPedido' c.id %}">Eliminar</a>
                       </td>
@@ -36,7 +36,7 @@
       </div>      
       <div class="container-botonera">
           <a href="{% url 'insertarPedido' %}" class="nav-menu-link nav-link" alt="Nuevo registro">Añadir registro</a>
-          <a href="#" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
+          <a href="{% url 'guardarArchivo' 'pedidos' %}" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
       </div>
       <div class="table">
           {% for c in respuesta %}

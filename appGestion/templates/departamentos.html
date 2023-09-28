@@ -35,7 +35,7 @@
       </div>      
       <div class="container-botonera">
           <a href="{% url 'insertarDepartamento' %}" class="nav-menu-link nav-link" alt="Nuevo registro">Añadir registro</a>
-          <a href="#" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
+          <a href="{% url 'guardarArchivo' 'departamentos' %}" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
       </div>
       <div class="table">
           {% for c in respuesta %}

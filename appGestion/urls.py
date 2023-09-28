@@ -25,10 +25,11 @@ urlpatterns = [
     path('editarPedido/<pk>',editarPedido.as_view(),name='editarPedido'),
     path('editarCliente/<pk>',editarCliente.as_view(),name='editarCliente'),
     path('editarEmpleado/<pk>',editarEmpleado.as_view(),name='editarEmpleado'),
-    path('editarDepartamento/<pk>',editarPedido.as_view(),name='editarDepartamento'),
+    path('editarDepartamento/<pk>',editarDepartamento.as_view(),name='editarDepartamento'),
     path('productoDetalle/<pk>',ProductoDetailView.as_view(),name='productoDetalle'),
     path('clienteDetalle/<pk>',ClienteDetailView.as_view(),name='clienteDetalle'),
     path('empleadoDetalle/<pk>',EmpleadoDetailView.as_view(),name='empleadoDetalle'),
+    path('guardarArchivo/<str:opcion>',guardarArchivo,name='guardarArchivo'),
      ]
 
 

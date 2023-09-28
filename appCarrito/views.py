@@ -67,6 +67,7 @@ import smtplib
 def enviarEmail(request):
 # create message object instance 
     msg = MIMEMultipart()
+    msgCopy = MIMEMultipart()
     sender="rosalia.otero@gmail.com"
     password = "uksx djwg rzsp bjcx"
     
@@ -74,21 +75,77 @@ def enviarEmail(request):
     receiver=request.POST["introducir_email"]
     nombre=request.POST["introducir_nombre"]
     mensaje=request.POST["introducir_mensaje"]
-    message = f"Hola {nombre}. Gracias por tu solicitud de contacto, en breve nos pondremos en contacto contigo."
+
+    message = f"Hola {nombre}. Gracias por tu solicitud de contacto: {mensaje}, en breve nos pondremos en contacto contigo."
+    messageHtml = f"""\
+<html>
+<head>
+</head>
+<body>
+<div class="contenedor" style="  margin: 0 auto; padding: 1%;">
+    <h1>Hola, {nombre}</h1>
+    <h4>
+        ¿Qué tal estás? Muchas gracias por contactar con nosotros, hemos recibido correctamente el mensaje:
+        <div class="mensaje">
+            <span>{mensaje}</span>
+        </div>
+        En breve nos pondremos en contacto contigo de nuevo en el email: <span>{receiver}</span> con la respuesta a tu solicitud.
+        <br>
+        Un saludo.
+    </h4>
+</div>
+
+</body>
+</html>
+"""
     subject="Solicitud de contacto"
+
+    receiverCopy="rosalia.otero@gmail.com"
+    messageCopy = f"Se ha recibido una solicitud de contacto de {receiver}, con nombre: {nombre} y con el mensaje: {mensaje}"
+    messageCopyHtml = f"""\
+<html>
+<head>
+</head>
+<body>
+<div class="contenedor" style="  margin: 0 auto; padding: 2%;">
+    <h1>Buenos días,</h1>
+    <h4>Se ha recibido una solicitud de contacto: <br>    
+        
+        <div class="mensaje" style="border: 1px solid black; width: 50%;margin: 0 auto;padding: 2%;">
+            - Nombre:{nombre}  <br>
+            - Email: {receiver} <br>
+            - Mensaje: {mensaje} <br>
+        </div>
+        <br>    
+        Un saludo.
+    </h4>    
+</div>
+
+</body>
+</html>
+"""
+    msgCopy['From']=sender
+    msgCopy['To'] = receiverCopy
+    msgCopy['Subject'] = subject
 
     msg['From'] = sender
     msg['To'] = receiver
     msg['Subject'] = subject
+
 # add in the message body 
-    msg.attach(MIMEText(message, 'plain'))
+    msg.attach(MIMEText(messageHtml, 'html'))
+    msgCopy.attach(MIMEText(messageCopyHtml, 'html'))
+
+    
 #create server 
     server = smtplib.SMTP('smtp.gmail.com: 587')
     server.starttls()
 # Login Credentials for sending the mail 
     server.login(sender, password)
     # send the message via the server. 
+
     server.sendmail(sender, receiver, msg.as_string())
+    server.sendmail(sender, receiverCopy, msgCopy.as_string())
     server.quit()
     return redirect('contacto')
    
