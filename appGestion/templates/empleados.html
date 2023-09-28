@@ -11,8 +11,6 @@
                       <th>Apellido</th>
                       <th>Oficio</th>
                       <th>Fecha Alta</th>
-                      <th>Salario</th>
-                      <th>Comisión</th>
                       <th>Telefono</th>
                       <th>Nº Depto.</th>
                       <th colspan="3">Operaciones</th>
@@ -25,13 +23,11 @@
                       <td>{{c.apellido}}</td>
                       <td>{{c.oficio}}</td>
                       <td>{{c.fecha_alta}}</td>
-                      <td>{{c.salario}}</td>
-                      <td>{{c.comision}}</td>
                       <td>{{c.telefono}}</td>
                       <td>{{c.dep_id}}</td>
                       
                       <td>
-                          <a class="link_accion" href="javascript:ventanaSecundaria('../empleadoDetalle/{{c.id}}')"> + Info</a>
+                          <a class="link_accion btn-empleados" href="javascript:ventanaSecundaria('../empleadoDetalle/{{c.id}}')"> + Info</a>
                       </td>
                       <td>
                         <a class="link_accion" href="{% url 'eliminarDepartamento' c.id %}">Eliminar</a>

@@ -1,16 +1,8 @@
-from typing import Any, Dict, Optional
-from django import http
-from django.db import models
-from django.forms.models import BaseModelForm
-from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import *
 from django.views.generic import DetailView,CreateView,UpdateView
 from .forms import *
 from django.urls import reverse_lazy
-
-
-# Create your views here.
 
 
 # VIEWS MOSTRAR DATOS
@@ -158,3 +150,6 @@ class EmpleadoDetailView(DetailView):
             objeto=self.model.objects.get(id=self.kwargs['pk'])
             return objeto
         
+#CREAR ARCHIVO PARA DESCARGA
+
+import openpyxl

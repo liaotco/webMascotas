@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'appCarrito',
     'appGestion',
     'webMascotas',
-    'email.mime'
-
+    'email.mime',
+    'openpyxl',
 ]
 
 MIDDLEWARE = [

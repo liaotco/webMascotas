@@ -171,8 +171,6 @@ margin: 0 auto;
     width: 200px;
     height: 200px;
     margin-top: 2%;
-  
-
 }
 .container-detalle tr:nth-child(odd) {
     background-color:lemonchiffon;
@@ -188,8 +186,7 @@ margin: 0 auto;
   padding: 1%;
   text-align: center;
   border-right: none;
-  }
-
+}
 .container-detalle th{
     border-bottom: 1px solid #454546 ;
     background-color: white;
@@ -198,8 +195,14 @@ margin: 0 auto;
 .container-detalle td{
     border:none;
         border-bottom: 1px solid #454546 ;
-
   }
 .content-detalle{
     width: 100%;    
     }
+
+.detallesCliente,.detallesEmpleado,.detallesProducto{
+  display:none;
+}
+.show{ 
+  display: flex;
+}

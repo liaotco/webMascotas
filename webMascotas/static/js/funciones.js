@@ -43,6 +43,7 @@ function showPopupEliminar(){
   setTimeout(4000);
 }
 
+
 $("#close").click(function(){
     $('.pop-up').removeClass('show');
     $('.pop-up-wrap').removeClass('show');
@@ -61,8 +62,8 @@ $(".btn-agregar").click(showPopupAgregar);
 $(".btn-eliminar").click(showPopupEliminar);
 $(".modal_btn").click(showPopupSubs);
 $(".button_formulario").click(showPopupContacto);
-
 });
+
 
 
 
