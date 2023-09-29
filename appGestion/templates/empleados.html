@@ -64,17 +64,15 @@
                   <div class="thead">Oficio</div>
                   <div class="tbody">{{c.oficio}}</div>
               </div>
-           
-              <td>{{c.id}}</td>
-              <td>{{c.apellido}}</td>
-              <td></td>
-              <td>{{c.director.emp_no}}</td>
-              <td>{{c.fecha_alta}}</td>
-              <td>{{c.salario}}</td>
-              <td>{{c.comision}}</td>
-              <td>{{c.dep_no.dnombre}}</td>
-              <td>{{c.telefono}}</td>
-          </div>
+              <div class="row">
+                <div class="thead">Operaciones</div>
+                <div class="tbody">
+                    <a class="link_accion" href="javascript:ventanaSecundaria('../empleadoDetalle/{{c.id}}')"> + Info</a>
+                    <a class="link_accion" href="{% url 'eliminarEmpleado' c.id %}">Eliminar</a>
+                    <a class="link_accion" href="{% url 'editarEmpleado' c.id %}">Editar</a>
+                </div>
+            </div>
+        </div>
           {% endfor%}
-      </div>
+    </div>
   {% endblock %}

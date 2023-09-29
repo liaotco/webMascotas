@@ -60,7 +60,14 @@
           <div class="thead">Precio</div>
           <div class="tbody">{{c.precio}}</div>
       </div>
-   
+      <div class="row">
+        <div class="thead">Operaciones</div>
+        <div class="tbody">
+            <a class="link_accion" href="javascript:ventanaSecundaria('../productoDetalle/{{c.id}}')"> + Info</a> 
+            <a class="link_accion" href="{% url 'eliminarProducto' c.id %}">Eliminar</a>
+            <a class="link_accion" href="{% url 'editarProducto' c.id %}">Editar</a>
+        </div>
+    </div>
   </div>
   {% endfor%}
 </div>

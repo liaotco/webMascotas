@@ -71,8 +71,16 @@
               <div class="row">
                   <div class="thead">Limite Crédito</div>
                   <div class="tbody">{{c.limite_credito}}</div>
-              </div>                  
-          </div>
+              </div>           
+              <div class="row">
+                <div class="thead">Operaciones</div>
+                <div class="tbody">
+                    <a class="link_accion btn-clientes" href="javascript:ventanaSecundaria('../clienteDetalle/{{c.id}}')"> + Info</a>
+                    <a class="link_accion" href="{% url 'eliminarCliente' c.id %}">Eliminar</a>
+                    <a class="link_accion" href="{% url 'editarCliente' c.id %}">Editar</a>
+                </div>
+            </div>           
+           </div>
           {% endfor%}
       </div>
   {% endblock %}

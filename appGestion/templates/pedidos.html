@@ -54,7 +54,13 @@
                   <div class="thead">Email</div>
                   <div class="tbody">{{c.email}}</div>
               </div>
-           
+              <div class="row">
+                <div class="thead">Operaciones</div>
+                <div class="tbody">
+                    <a class="link_accion" href="{% url 'eliminarPedido' c.id %}">Eliminar</a>
+                    <a class="link_accion" href="{% url 'editarPedido' c.id %}">Editar</a>
+                </div>
+            </div>              
           </div>
           {% endfor%}
       </div>
