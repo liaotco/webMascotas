@@ -47,13 +47,21 @@
                   <div class="tbody">{{c.id}}</div>
               </div>
               <div class="row">
-                  <div class="thead">Nombre</div>
-                  <div class="tbody">{{c.nombre}}</div>
+                  <div class="thead">Unidades</div>
+                  <div class="tbody">{{c.unidades}}</div>
               </div>
               <div class="row">
-                  <div class="thead">Email</div>
-                  <div class="tbody">{{c.email}}</div>
+                  <div class="thead">Fecha</div>
+                  <div class="tbody">{{c.fecha_pedido}}</div>
               </div>
+              <div class="row">
+                <div class="thead">Cliente</div>
+                <div class="tbody">{{c.cliente.nombre}}</div>
+            </div>
+            <div class="row">
+                <div class="thead">Producto</div>
+                <div class="tbody">{{c.producto.nombre}}</div>
+            </div>
               <div class="row">
                 <div class="thead">Operaciones</div>
                 <div class="tbody">
