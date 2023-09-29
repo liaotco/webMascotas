@@ -30,9 +30,7 @@ margin-right: 5%;
 margin-top: 2%;
 margin-bottom: 2%;
 }
-img {  
-width: 100%;
-}
+
 .main-header {
  width: 100%;
 }
@@ -971,4 +969,113 @@ margin-bottom: 5%;}
   .product__img {
     height: 200px;
   }
+}
+
+/*LOGIN*/
+.login_container{
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  width: fit-content;
+  box-shadow: 0 5px 10px rgba(0,0,0,.15);
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 16px;
+  background-color: var(--background);
+  border: 1px solid var(--primary);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px var(--aura);
+  min-width: 280px;
+  max-width: 460px;
+  width: 100%;
+  padding: 32px;
+}
+.login-logo, .login-form img {
+  margin: 0 auto;
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
+  object-fit: cover;  }
+
+.login-logo-row {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+.login-form__button {
+  background-color: #333;
+  color: white;
+  white-space: nowrap;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  line-height: 50px;
+  outline: none;
+  font-size: 18px;
+  letter-spacing: .025em;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 50px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.15);
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+}
+.login-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin:0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.login-form__row {
+  display: flex;
+  justify-content: space-between;
+}
+.login-form__signup {
+  display: flex;
+  justify-content: center;
+}
+.login-form__actions a,
+.login-form__actions a:hover,
+.login-form__actions a:visited
+{
+color:blue;
+}
+
+.login-form div{
+  margin: 0 auto;
+  text-align: center;
+}
+.login-form div label {
+  padding-bottom: 1%;
+}
+.login-form div input{
+  margin: 0 auto;
+  min-width: 10vw;
+  min-height: 3vh;  
+  border-radius: 5px;
+  border:none;
+  background: rgba(206, 197, 197, 0.596);
+  
+}
+.login-form div .helptext,
+.login-form div li
+{ font-size: x-small;
+  padding: 2%;
+  list-style: none;
 }

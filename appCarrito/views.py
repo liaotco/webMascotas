@@ -13,7 +13,7 @@ def inicio(request):
 def tienda(request):
     productos=Producto.objects.all() #sacamos todos los productos de la tabla
     return render(request,'tiendaonline.html',{'productos':productos}) #devolvemos por contexto a la plantilla html la lista de productos de la bd
-
+@login_required
 def verCarrito(request):
     return render(request,'carrito.html')
 

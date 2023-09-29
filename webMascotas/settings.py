@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'webMascotas',
     'email.mime',
     'django_excel',
+    
 ]
 
 MIDDLEWARE = [
@@ -136,5 +137,5 @@ STATICFILES_DIRS=(os.path.join(BASE_DIR,'webMascotas/static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL= 'inicio'
-LOGIN_URL='user:login'
-LOGIN_REDIRECT_URL='inicio'
+LOGIN_URL='appUser:login'
+LOGOUT_REDIRECT_URL='inicio'

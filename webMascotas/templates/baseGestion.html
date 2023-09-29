@@ -8,6 +8,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link href="{% static 'css/estilosGestion.css' %}"rel="stylesheet" type="text/css">
     <link href="{% static 'css/estilosTienda.css' %}"rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <script src="{% static 'js/funciones.js' %}" defer></script>
     <script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous"></script>  
     
@@ -34,7 +35,14 @@
           <div class="main-header__container">        
          </div>
          <div class="main-header__container">
-            
+          {% if user.is_authenticated %}
+          <span>Hola, {{user.username}}</span>
+          <form action="{% url 'appUser:logout' %}" method="post"> {% csrf_token %}
+            <button class="login-form__button" >Logout</button>
+          </form>
+        {% else %}
+         <a href="{% url 'appUser:login' %}" class="main-header__link" ><i class="fas fa-user"></i></a>
+        {% endif %}
          </div>
       </div>
     </header>

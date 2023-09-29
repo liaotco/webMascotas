@@ -8,14 +8,24 @@
     {% if form.errors %}
         <p>Tu nombre o contraseña no coinciden. Prueba otra vez</p>
     {% endif %}
-    <form action="{% url 'appUser:register' %}" method="post" class="login-form">
+    <form action="{% url 'appUser:login' %}" method="post" class="login-form">
         {% csrf_token %}
         <div class="login-logo-row">
 			<img class="login-logo" src="{% static 'images/user.png' %}" alt="">
+			<h1>LogIn!</h1>
 		</div>	
         {{ form.as_div }}
         
 		<input type="submit" class="login-form__button" value="Login" >
+		<div class="login-form__actions">
+			<div class="login-form_row">
+				<span>¿No recuerdas tu contraseña?</span>
+				<a href="#" title="Reset Password">Reset Password</a>
+			</div>
+			<div class="login-form__signup">
+				<a href="{% url 'appUser:register' %}" title="Registrarse">Crear una cuenta</a>
+			</div>
+		</div>
 	</form>
 </div>
 {% endblock content %}

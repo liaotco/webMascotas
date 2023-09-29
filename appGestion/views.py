@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
 # VIEWS MOSTRAR DATOS
+@login_required
 def webGestion(request):
     return render(request,'baseGestion.html')
 

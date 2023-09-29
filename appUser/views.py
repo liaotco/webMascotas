@@ -13,6 +13,7 @@ def register(request):
             return redirect('inicio')
     else:
         form=UserCreationForm()
+        
     context = {'form':form}
     return render(request,'registration/register.html',context)
 
