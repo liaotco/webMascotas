@@ -24,7 +24,7 @@
                       <td>{{c.oficio}}</td>
                       <td>{{c.fecha_alta}}</td>
                       <td>{{c.telefono}}</td>
-                      <td>{{c.dep_id}}</td>
+                      <td>{{c.dep.nombre}}</td>
                       
                       <td>
                           <a class="link_accion" href="javascript:ventanaSecundaria('../empleadoDetalle/{{c.id}}')"> + Info</a>
@@ -70,7 +70,7 @@
             </div>
             <div class="row">
                 <div class="thead">Departamento</div>
-                <div class="tbody">{{c.dep_id.nombre}}</div>
+                <div class="tbody">{{c.dep.nombre}}</div>
             </div>
               <div class="row">
                 <div class="thead">Operaciones</div>
