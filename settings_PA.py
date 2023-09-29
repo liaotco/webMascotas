@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'appCarrito',
     'appGestion',
-    'webMascotas'
+    'appUser',
+    'webMascotas',
+    'email.mime',
+    'django_excel',
+    
 ]
 
 MIDDLEWARE = [
@@ -82,7 +86,7 @@ WSGI_APPLICATION = 'webMascotas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'liaotc$default',
+        'NAME': 'liaotc$webtienda',
         'USER': 'liaotc',
         'PASSWORD': 'R0sal1a23',
         'HOST': 'liaotc.mysql.pythonanywhere-services.com',
@@ -132,3 +136,7 @@ STATICFILES_DIRS=(os.path.join(BASE_DIR,'webMascotas/static'),)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL= 'inicio'
+LOGIN_URL='appUser:login'
+LOGOUT_REDIRECT_URL='inicio'
