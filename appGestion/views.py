@@ -4,12 +4,17 @@ from django.views.generic import DetailView,CreateView,UpdateView
 from .forms import *
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 # VIEWS MOSTRAR DATOS
 @login_required
 def webGestion(request):
     return render(request,'baseGestion.html')
 
+
+def mostrarUsuarios(request):
+     listado=User.objects.all()
+     return render(request,'usuarios.html',{'respuesta':listado})
          
 def mostrarProductos(request):
      listado=Producto.objects.all()

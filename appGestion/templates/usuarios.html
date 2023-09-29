@@ -1,0 +1,62 @@
+{% extends 'baseGestion.html' %}
+{% load static %}
+<title>{% block title %}Clientes{% endblock %}</title>
+
+{% block content %}
+
+<div class="container-tabla">
+  <table class="content-table">
+      <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Username</th>
+                      <th>Fecha Alta</th>
+                      <th>Ultima Conexión</th>                      
+                 </tr>
+              </thead>
+              <tbody>
+                  {% for c in respuesta %}
+                  <tr class="table-info">
+                      <td>{{c.id}}</td>
+                      <td>{{c.nombre}}</td>
+                      <td>{{c.username}}</td>
+                      <td>{{c.date_joined}}</td>                      
+                      <td>{{c.last_login}}</td>
+                 {% endfor%}
+                  </tr>
+              </tbody>
+          </table>
+      </div>      
+      <div class="container-botonera">
+          <a href="{% url 'insertarCliente' %}" class="nav-menu-link nav-link" alt="Nuevo registro">Añadir registro</a>
+          <a href="{% url 'guardarArchivo' 'clientes' %}" class="nav-menu-link nav-link" alt="Descargar listado">Descargar listado</a>
+      </div>
+      <div class="table">
+          {% for c in respuesta %}
+          <div class="item">
+            
+              <div class="row">
+                  <div class="thead">ID</div>
+                  <div class="tbody">{{c.id}}</div>
+              </div>
+              <div class="row">
+                  <div class="thead">Nombre</div>
+                  <div class="tbody">{{c.nombre}}</div>
+              </div>
+              <div class="row">
+                  <div class="thead">Username</div>
+                  <div class="tbody">{{c.username}}</div>
+              </div>
+              <div class="row">
+                  <div class="thead">Fecha Alta</div>
+                  <div class="tbody">{{c.date_joined}}</div>
+              </div>
+              <div class="row">
+                  <div class="thead">Última Conexión</div>
+                  <div class="tbody">{{c.last_login}}</div>
+              </div>                              
+           </div>
+          {% endfor%}
+      </div>
+  {% endblock %}

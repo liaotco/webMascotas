@@ -21,6 +21,7 @@ urlpatterns = [
     path('verDepartamento/',mostrarDepartamentos, name='verDepartamento'),
     path('verEmpleado/',mostrarEmpleados, name='verEmpleado'),
     path('verPedido/',mostrarPedidos, name='verPedido'),
+    path('verUsuario/',mostrarUsuarios, name='verUsuario'),
     path('editarProducto/<pk>',editarProducto.as_view(),name='editarProducto'),
     path('editarPedido/<pk>',editarPedido.as_view(),name='editarPedido'),
     path('editarCliente/<pk>',editarCliente.as_view(),name='editarCliente'),
